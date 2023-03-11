@@ -69,87 +69,122 @@
                         <ul class="submenu ">
                             <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
+                                    
                                     <span>English</span>
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item">
-                                        <a href="<?php echo e(route('learn.noun')); ?>">Noun</a>
+                                        <a href="<?php echo e(route('learn.english.noun')); ?>">Noun</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Pronoun</a>
+                                        <a href="<?php echo e(route('learn.english.pronoun')); ?>">Pronoun</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Verb</a>
+                                        <a href="<?php echo e(route('learn.english.verb')); ?>">Verb</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Adverb</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Sentence</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Article</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Geogrpahy</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Computer</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Mental Ability</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Ethics</a>
-                                    </li>
-                                </ul>
-                            </li>
-                                
-                            <li class="submenu-item sidebar-item  has-sub">
-                                <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Bangla</span>
-                                </a>
-                                <ul class="submenu ">
-                                    <li class="submenu-item">
-                                        <a href="">1st Paper</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">2nd Paper</a>
+                                        <a href="<?php echo e(route('learn.english.adverb')); ?>">Adverb</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Math</span>
-                                </a>
-                                <ul class="submenu ">
-                                    <li class="submenu-item">
-                                        <a href="">Percant</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Interest Rate</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Algebra</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="submenu-item sidebar-item  has-sub">
-                                <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
+                                    
                                     <span>Literature</span>
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item">
-                                        <a href="">Bangla</a>
+                                        <a href="<?php echo e(route('learn.english.oldperiod')); ?>">The Old English Period</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">English</a>
+                                        <a href="<?php echo e(route('learn.english.middleperiod')); ?>">The Middle English Period</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="<?php echo e(route('learn.english.romanticperiod')); ?>">The Romantice Period</a>
+                                    </li>
+                                </ul>    
+                            </li>
+                                
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>বাংলা ব্যাকরণ</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="<?php echo e(route('learn.bangla.languagegrammer')); ?>">ভাষা ও ব্যাকরণ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="<?php echo e(route('learn.bangla.dhoniborno')); ?>">ধ্বনি, বর্ণ ও যুক্তবর্ণ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">ণ-ত্ব বিধান ও ষ-ত্ব বিধান</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">সন্ধি</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>বাংলা সাহিত্য</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">প্রাচীন যুগ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">মধ্য যুগ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">আধুনিক যুগ</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>পাটিগণিত</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">বাস্তব সংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">বর্গমূল ও পূর্ণসংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">লসাগু ও গসাগু</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">গড়</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">ভগ্নাংশ</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>বীজগণিত</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">বাস্তব সংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">বর্গমূল ও পূর্ণসংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">লসাগু ও গসাগু</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">গড়</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">ভগ্নাংশ</a>
                                     </li>
                                 </ul>
                             </li>

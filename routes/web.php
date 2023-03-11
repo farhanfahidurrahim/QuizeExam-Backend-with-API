@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LearnController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //auth:sanctum
 Route::get("/",[\App\Http\Controllers\loginController::class,"index"])->name("login");
 Route::post("/",[\App\Http\Controllers\loginController::class,"store"]);
@@ -28,16 +29,77 @@ Route::get("logout",[\App\Http\Controllers\User::class,"Logout"])->name("users.l
 //Video Course
 Route::get("/courses/",[\App\Http\Controllers\CoursesController::class,"index"])->name("courses.index")->middleware("auth");
 Route::get("/courses/edit/{id}",[\App\Http\Controllers\CoursesController::class,"edit"])->name("courses.edit")->middleware("auth");
-Route::post("/courses/edit/{id}",[\App\Http\Controllers\CoursesController::class,"editSave"])->name("courses.edit")->middleware("auth");
+//Route::post("/courses/edit/{id}",[\App\Http\Controllers\CoursesController::class,"editSave"])->name("courses.edit")->middleware("auth");
 Route::get("/courses/delete/{id}",[\App\Http\Controllers\CoursesController::class,"delete"])->name("courses.delete")->middleware("auth");
 Route::get("/courses/store/",function (){
     return view("VideoCourse.store");
 })->name("courses.store")->middleware("auth");
-Route::post("/courses/store",[\App\Http\Controllers\CoursesController::class,"store"])->name("courses.store")->middleware("auth");
+//Route::post("/courses/store",[\App\Http\Controllers\CoursesController::class,"store"])->name("courses.store")->middleware("auth");
 
-//Learn
-Route::get("/noun",[\App\Http\Controllers\LearnController::class,"noun"])->name("learn.noun")->middleware("auth");
-Route::post("/noun-store",[\App\Http\Controllers\LearnController::class,"nounStore"])->name("learn.noun.store")->middleware("auth");
+//Learn Controller
+
+Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'learnEnglishStore'])->name('learn.english.store');
+
+    Route::get('noun',[LearnController::class,'noun'])->name('english.noun')->middleware("auth");
+    Route::DELETE('noun-delete/{id}',[LearnController::class,'nounDelete'])->name('learn.noun.destroy')->middleware("auth");
+    Route::get('pronoun',[LearnController::class,'pronoun'])->name('english.pronoun');
+    Route::get('english/verb',[LearnController::class,'noun'])->name('learn.english.verb')->middleware("auth");
+    Route::get('english/adverb',[LearnController::class,'noun'])->name('learn.english.adverb')->middleware("auth");
+
+});
+
+Route::prefix('learn/english-literature/')->middleware('auth')->group(function(){
+
+    Route::get('old-period',[LearnController::class,'oldPeriod'])->name('learn.english.oldperiod');
+    Route::get('middle-period',[LearnController::class,'middlePeriod'])->name('learn.english.middleperiod');
+    Route::get('romantic-period',[LearnController::class,'romanticPeriod'])->name('learn.english.romanticperiod');
+
+});
+
+Route::prefix('learn/bangla/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'learnBanglaStore'])->name('learn.bangla.store');
+
+    Route::get('language-grammer',[LearnController::class,'banglalanguageGrammer'])->name('learn.bangla.languagegrammer');
+    Route::get('dhoni-borno-juktoborno',[LearnController::class,'dhoniborno'])->name('learn.bangla.dhoniborno');
+    Route::get('prachin-zug',[LearnController::class,'prachinzug'])->name('bangla.prachinzug');
+    Route::get('moddo-zug',[LearnController::class,'moddozug'])->name('bangla.moddozug');
+    Route::get('adhunik-zug',[LearnController::class,'adhunikzug'])->name('bangla.adhunikzug');
+
+});
+
+Route::prefix('learn/math/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'learnMathStore'])->name('learn.math.store');
+
+    Route::get('realnumber',[LearnController::class,'realnumber'])->name('math.realnumber');
+    Route::get('squareinteger',[LearnController::class,'squareInteger'])->name('math.square');
+    Route::get('lcmgcm',[LearnController::class,'lcmgcm'])->name('math.lcmgcm');
+    Route::get('average',[LearnController::class,'average'])->name('math.average');
+    Route::get('fraction',[LearnController::class,'fraction'])->name('math.fraction');
+
+    Route::get('algebra1',[LearnController::class,'algebra1'])->name('math.algebra1');
+    Route::get('algebra2',[LearnController::class,'algebra2'])->name('math.algebra2');
+    Route::get('algebra3',[LearnController::class,'algebra3'])->name('math.algebra3');
+});
+
+Route::prefix('learn/international-affairs/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'learnIntAffStore'])->name('learn.interaff.store');
+
+    Route::get('worldintro',[LearnController::class,'worldintro'])->name('interaff.worldintro');
+    Route::get('asia',[LearnController::class,'asia'])->name('interaff.asia');
+    Route::get('europe',[LearnController::class,'europe'])->name('interaff.europe');
+    Route::get('africa',[LearnController::class,'africa'])->name('interaff.africa');
+    Route::get('australia',[LearnController::class,'australia'])->name('interaff.australia');
+});
+
+Route::prefix('learn/bangladesh-affairs/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'bangladeshAffStore'])->name('learn.bangladeshaff.store');
+
+    Route::get('britishperiod',[LearnController::class,'britishperiod'])->name('bangladeshaff.britishperiod');
+    Route::get('pakiperiod',[LearnController::class,'pakiperiod'])->name('bangladeshaff.pakiperiod');
+    Route::get('liberationwar',[LearnController::class,'liberationwar'])->name('bangladeshaff.liberationwar');
+});
+
 
 //quiz Subject Section
 Route::get("/quiz/subjects",[\App\Http\Controllers\QuizController::class,"Subjects"])->name("quiz.subjects")->middleware("auth");

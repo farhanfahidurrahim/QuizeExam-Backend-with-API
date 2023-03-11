@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('learns', function (Blueprint $table) {
             $table->id();
+            $table->string('subject_name');
+            $table->string('topic_name');
             $table->string('title');
             $table->string('pdf_file_path');
             $table->timestamps();

@@ -84,123 +84,235 @@
                         <ul class="submenu ">
                             <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
+                                    {{-- <i class="bi bi-hexagon-fill"></i> --}}
                                     <span>English</span>
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item">
-                                        <a href="{{ route('learn.noun') }}">Noun</a>
+                                        <a href="{{ route('english.noun') }}">Noun</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Pronoun</a>
+                                        <a href="{{ route('english.pronoun') }}">Pronoun</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Verb</a>
+                                        <a href="{{ route('learn.english.verb') }}">Verb</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">Adverb</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Sentence</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Article</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Geogrpahy</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Computer</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Mental Ability</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Ethics</a>
-                                    </li>
-                                </ul>
-                            </li>
-                                
-                            <li class="submenu-item sidebar-item  has-sub">
-                                <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Bangla</span>
-                                </a>
-                                <ul class="submenu ">
-                                    <li class="submenu-item">
-                                        <a href="">1st Paper</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">2nd Paper</a>
+                                        <a href="{{ route('learn.english.adverb') }}">Adverb</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Math</span>
-                                </a>
-                                <ul class="submenu ">
-                                    <li class="submenu-item">
-                                        <a href="">Percant</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Interest Rate</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="">Algebra</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="submenu-item sidebar-item  has-sub">
-                                <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
+                                    {{-- <i class="bi bi-hexagon-fill"></i> --}}
                                     <span>Literature</span>
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item">
-                                        <a href="">Bangla</a>
+                                        <a href="{{ route('learn.english.oldperiod') }}">The Old English Period</a>
                                     </li>
                                     <li class="submenu-item">
-                                        <a href="">English</a>
+                                        <a href="{{ route('learn.english.middleperiod') }}">The Middle English Period</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('learn.english.romanticperiod') }}">The Romantice Period</a>
+                                    </li>
+                                </ul>    
+                            </li>
+                                
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>বাংলা ব্যাকরণ</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('learn.bangla.languagegrammer') }}">ভাষা ও ব্যাকরণ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('learn.bangla.dhoniborno') }}">ধ্বনি, বর্ণ ও যুক্তবর্ণ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">ণ-ত্ব বিধান ও ষ-ত্ব বিধান</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">সন্ধি</a>
                                     </li>
                                 </ul>
                             </li>
-                                
+
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>বাংলা সাহিত্য</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangla.prachinzug') }}">প্রাচীন যুগ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangla.moddozug') }}">মধ্য যুগ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangla.adhunikzug') }}">আধুনিক যুগ</a>
+                                    </li>
+                                </ul>
                             </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>International</span>
+                                    <span>পাটিগণিত</span>
                                 </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.realnumber') }}">বাস্তব সংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.square') }}">বর্গমূল ও পূর্ণসংখ্যা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.lcmgcm') }}">লসাগু ও গসাগু</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.average') }}">গড়</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.fraction') }}">ভগ্নাংশ</a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Bangladesh</span>
+                                    <span>বীজগণিত</span>
                                 </a>
-
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.algebra1') }}">বীজগাণিতিক রাশি</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.algebra2') }}">বীজগানিতিক সূত্রাবলী</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('math.algebra3') }}">উৎপাদকে বিশ্লেষণ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Geography</span>
+                                    <span>আন্তর্জাতিক বিষয়াবলী</span>
                                 </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('interaff.worldintro') }}">বিশ্ব পরিচিতি</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('interaff.asia') }}">এশিয়া</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('interaff.europe') }}">ইউরোপ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('interaff.africa') }}">আফ্রিকা</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('interaff.australia') }}">অস্ট্রেলিয়া</a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Computer</span>
+                                    <span>বাংলাদেশ বিষয়াবলী</span>
                                 </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangladeshaff.britishperiod') }}">ব্রিটিশ আমল</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangladeshaff.pakiperiod') }}">পাকিস্তান আমল</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="{{ route('bangladeshaff.liberationwar') }}">মুক্তিযুদ্ধ</a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Mental Ability</span>
+                                    <span>ভূগোল ও পরিবেশ</span>
                                 </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">ভূগোল ও মহাবিশ্ব</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">মানচিত্র</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">পৃথিবীর গঠন</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">বাংলাদেশ </a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">আন্তর্জাতিক ভূগোল</a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
-                                    <i class="bi bi-hexagon-fill"></i>
-                                    <span>Ethics</span>
+                                    <span>কম্পিউটার ও তথ্য প্রযুক্তি</span>
                                 </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">কম্পিউটারের ইতিহাস</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">কম্পিউটারের অঙ্গ সংগঠন</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">পেরিফেরাল</a>
+                                    </li>
+                                </ul>
+                            </li>
 
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>মানসিক দক্ষতা</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">ভাষাগত যৌক্তিক বিচার</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">সমস্যা সমাধান </a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">বানান ও ভাষা </a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">যান্ত্রিক দক্ষতা</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="submenu-item sidebar-item  has-sub">
+                                <a href="#" class='sidebar-link'>
+                                    <span>নৈতিকতা, মূল্যবোধ ও সুশাসন</span>
+                                </a>
+                                <ul class="submenu ">
+                                    <li class="submenu-item">
+                                        <a href="">সুশাসন</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">মূল্যবোধ</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a href="">নৈতিকতা</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
@@ -213,12 +325,17 @@
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item ">
-                                <a href="">Bank 01</a>
+                                <a href="">English</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="">Bank 02</a>
+                                <a href="">Math</a>
                             </li>
-
+                            <li class="submenu-item ">
+                                <a href="">Bangla</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="">Computer</a>
+                            </li>
                         </ul>
                     </li>
 
