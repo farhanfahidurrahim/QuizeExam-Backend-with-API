@@ -21,7 +21,7 @@
 
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" action="<?php echo e(route("learn.noun.store")); ?>" enctype="multipart/form-data">
+                            <form class="form" method="post" action="<?php echo e(route("learn.english.store")); ?>" enctype="multipart/form-data">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="subject_name" value="English">
                                 <input type="hidden" name="topic_name" value="Noun">

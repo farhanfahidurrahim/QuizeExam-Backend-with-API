@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnController;
+use App\Http\Controllers\VocabularyController;
+use App\Http\Controllers\EbookController;
+use App\Http\Controllers\CurrentAffairController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,11 +45,10 @@ Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
     Route::post('store',[LearnController::class,'learnEnglishStore'])->name('learn.english.store');
 
     Route::get('noun',[LearnController::class,'noun'])->name('english.noun')->middleware("auth");
-    Route::DELETE('noun-delete/{id}',[LearnController::class,'nounDelete'])->name('learn.noun.destroy')->middleware("auth");
+    Route::DELETE('delete/{id}',[LearnController::class,'nounDelete'])->name('learn.noun.destroy');
     Route::get('pronoun',[LearnController::class,'pronoun'])->name('english.pronoun');
-    Route::get('english/verb',[LearnController::class,'noun'])->name('learn.english.verb')->middleware("auth");
-    Route::get('english/adverb',[LearnController::class,'noun'])->name('learn.english.adverb')->middleware("auth");
-
+    Route::get('verb',[LearnController::class,'verb'])->name('english.verb')->middleware("auth");
+    Route::get('adverb',[LearnController::class,'adverb'])->name('english.adverb')->middleware("auth");
 });
 
 Route::prefix('learn/english-literature/')->middleware('auth')->group(function(){
@@ -54,18 +56,16 @@ Route::prefix('learn/english-literature/')->middleware('auth')->group(function()
     Route::get('old-period',[LearnController::class,'oldPeriod'])->name('learn.english.oldperiod');
     Route::get('middle-period',[LearnController::class,'middlePeriod'])->name('learn.english.middleperiod');
     Route::get('romantic-period',[LearnController::class,'romanticPeriod'])->name('learn.english.romanticperiod');
-
 });
 
 Route::prefix('learn/bangla/')->middleware('auth')->group(function(){
     Route::post('store',[LearnController::class,'learnBanglaStore'])->name('learn.bangla.store');
 
-    Route::get('language-grammer',[LearnController::class,'banglalanguageGrammer'])->name('learn.bangla.languagegrammer');
-    Route::get('dhoni-borno-juktoborno',[LearnController::class,'dhoniborno'])->name('learn.bangla.dhoniborno');
+    Route::get('language-grammer',[LearnController::class,'languageGrammer'])->name('bangla.languagegrammer');
+    Route::get('dhoni-borno-juktoborno',[LearnController::class,'dhoniborno'])->name('bangla.dhoniborno');
     Route::get('prachin-zug',[LearnController::class,'prachinzug'])->name('bangla.prachinzug');
     Route::get('moddo-zug',[LearnController::class,'moddozug'])->name('bangla.moddozug');
-    Route::get('adhunik-zug',[LearnController::class,'adhunikzug'])->name('bangla.adhunikzug');
-
+    Route::get('modern-era',[LearnController::class,'adhunikzug'])->name('bangla.adhunikzug');
 });
 
 Route::prefix('learn/math/')->middleware('auth')->group(function(){
@@ -97,9 +97,74 @@ Route::prefix('learn/bangladesh-affairs/')->middleware('auth')->group(function()
 
     Route::get('britishperiod',[LearnController::class,'britishperiod'])->name('bangladeshaff.britishperiod');
     Route::get('pakiperiod',[LearnController::class,'pakiperiod'])->name('bangladeshaff.pakiperiod');
-    Route::get('liberationwar',[LearnController::class,'liberationwar'])->name('bangladeshaff.liberationwar');
+    Route::get('liberation-war',[LearnController::class,'liberationwar'])->name('bangladeshaff.liberationwar');
 });
 
+Route::prefix('learn/geography-environment/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'geoEnvStore'])->name('learn.geographyEnv.store');
+
+    Route::get('geography-universe',[LearnController::class,'geographyuniverse'])->name('geoenv.geouniverse');
+    Route::get('map',[LearnController::class,'map'])->name('geoenv.map');
+    Route::get('earth-strucutre',[LearnController::class,'earthStrucutre'])->name('geoenv.earthStrucutre');
+    Route::get('bangladesh',[LearnController::class,'bangladesh'])->name('geoenv.bangladesh');
+    Route::get('international-geography',[LearnController::class,'internationalGeo'])->name('geoenv.internationalGeo');
+});
+
+Route::prefix('learn/computer-ict/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'computerIct'])->name('learn.computerIct.store');
+
+    Route::get('computer-history',[LearnController::class,'computerHistory'])->name('compict.computerHistory');
+    Route::get('computer-architec',[LearnController::class,'computerArchitec'])->name('compict.computerArchitecture');
+    Route::get('computer-periferal',[LearnController::class,'computerPeriferal'])->name('compict.computerPeriferal');
+});
+
+Route::prefix('bank/')->middleware('auth')->group(function(){
+    Route::post('store',[LearnController::class,'computerIct'])->name('bank.store');
+
+    Route::get('english',[LearnController::class,'bankEnglish'])->name('bank.english');
+    Route::get('math',[LearnController::class,'bankMath'])->name('bank.math');
+    Route::get('bangla',[LearnController::class,'bankBangla'])->name('bank.bangla');
+    Route::get('computer',[LearnController::class,'bankComputer'])->name('bank.computer');
+});
+
+Route::prefix('vocabulary/')->middleware('auth')->group(function(){
+    Route::post('store',[VocabularyController::class,'vocabularyStore'])->name('vocabulary.store');
+
+    Route::get('barrons-333',[VocabularyController::class,'barrons333'])->name('vocabulary.barrons333');
+    Route::get('barrons-800',[VocabularyController::class,'barrons800'])->name('vocabulary.barrons800');
+    Route::get('word-smart-1',[VocabularyController::class,'wordsmart1'])->name('vocabulary.wordsmart1');
+    Route::get('word-smart-2',[VocabularyController::class,'wordsmart2'])->name('vocabulary.wordsmart2');
+    Route::get('manhattan-1000',[VocabularyController::class,'manhattan'])->name('vocabulary.manhattan');
+    Route::get('magoosh-1000',[VocabularyController::class,'magoosh'])->name('vocabulary.magoosh');
+    Route::get('daily-editorial',[VocabularyController::class,'dailyedit'])->name('vocabulary.dailyeditorial');
+    Route::DELETE('delete/{id}',[VocabularyController::class,'delete'])->name('vocabulary.destroy');
+});
+
+Route::prefix('current-affairs/')->middleware('auth')->group(function(){
+    Route::post('store',[CurrentAffairController::class,'store'])->name('currentaffairs.store');
+    Route::DELETE('delete/{id}',[CurrentAffairController::class,'delete'])->name('currentaffairs.destroy');
+
+    Route::get('bangladesh',[CurrentAffairController::class,'bangladesh'])->name('currentaffairs.bangladesh');
+    Route::get('international',[CurrentAffairController::class,'international'])->name('currentaffairs.international');
+    Route::get('misc',[CurrentAffairController::class,'misc'])->name('currentaffairs.misc');
+});
+
+Route::prefix('e-book/')->middleware('auth')->group(function(){
+    Route::post('store',[EbookController::class,'ebookStore'])->name('ebook.store');
+    Route::DELETE('delete/{id}',[EbookController::class,'delete'])->name('ebook.destroy');
+
+    Route::get('general-math-cls-10',[EbookController::class,'generalMath'])->name('ebook.generalMath');
+    Route::get('higher-math-cls-10',[EbookController::class,'higherMath'])->name('ebook.higherMath');
+    Route::get('general-science-cls-10',[EbookController::class,'generalScience'])->name('ebook.generalScience');
+
+    Route::get('general-math-cls-8',[EbookController::class,'generalMath8'])->name('ebook.generalMath8');
+    Route::get('higher-math-cls-8',[EbookController::class,'higherMath8'])->name('ebook.higherMath8');
+    Route::get('general-science-cls-8',[EbookController::class,'generalScience8'])->name('ebook.generalScience8');
+
+    Route::get('general-math-cls-7',[EbookController::class,'generalMath7'])->name('ebook.generalMath7');
+    Route::get('higher-math-cls-7',[EbookController::class,'higherMath7'])->name('ebook.higherMath7');
+    Route::get('general-science-cls-7',[EbookController::class,'generalScience7'])->name('ebook.generalScience7');
+});
 
 //quiz Subject Section
 Route::get("/quiz/subjects",[\App\Http\Controllers\QuizController::class,"Subjects"])->name("quiz.subjects")->middleware("auth");

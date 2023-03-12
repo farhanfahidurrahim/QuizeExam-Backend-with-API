@@ -20,7 +20,7 @@
 
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" action="{{route("learn.noun.store")}}" enctype="multipart/form-data">
+                            <form class="form" method="post" action="{{route("learn.english.store")}}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="subject_name" value="English">
                                 <input type="hidden" name="topic_name" value="Noun">

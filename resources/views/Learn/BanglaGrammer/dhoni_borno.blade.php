@@ -7,7 +7,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add Bangla Literature - Language & Grammer PDF</h4>
+                        <h4 class="card-title">Add Bangla Grammer - Dhoni Borno Juktoborno PDF</h4>
                     </div>
 
                      <!-- Alert message (start) -->
@@ -22,12 +22,13 @@
                         <div class="card-body">
                             <form class="form" method="post" action="{{ route('learn.bangla.store') }}" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="subject_name" value="Language Grammer">
+                                <input type="hidden" name="subject_name" value="Bangla">
+                                <input type="hidden" name="topic_name" value="Dhoni Borno Juktoborno">
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="last-name-column">PDF Title</label>
-                                        	<input type="text" id="city-column" class="form-control"  placeholder="Enter PDF Title" name="title" required>
+                                            <input type="text" id="city-column" class="form-control"  placeholder="Enter PDF Title" name="title" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -74,7 +75,9 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                         <tr>
-                            <th>Subject</th>
+                            <th>Serial</th>
+                            <th>Subject Name</th>
+                            <th>Topic Name</th>
                             <th>PDF Title</th>
                             <th>PDF Path</th>
                             <th>Action</th>
@@ -85,12 +88,14 @@
                         @foreach($data as $result)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td>{{$result->subject_name}}</td>
+                                <td>{{$result->topic_name}}</td>
                                 <td>{{$result->title}}</td>
                                 <td>{{$result->pdf_file_path}}</td>
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>
                                 </td> --}}
                                 <td class="d-flex">
-                                	<a href="{{ $result->pdf_file_path }}" target="_blank" class="btn btn-primary">View</a>
+                                    <a href="{{ $result->pdf_file_path }}" target="_blank" class="btn btn-primary">View</a>
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
                                         method="POST" action="{{ route('learn.noun.destroy', $result->id) }}">
@@ -114,5 +119,3 @@
 @section("js")
 
 @endsection
-
-

@@ -22,7 +22,8 @@
                         <div class="card-body">
                             <form class="form" method="post" action="{{ route('learn.bangla.store') }}" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="subject_name" value="Adhunik Zug">
+                                <input type="hidden" name="subject_name" value="Bangla">
+                                <input type="hidden" name="topic_name" value="Modern Era">
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
