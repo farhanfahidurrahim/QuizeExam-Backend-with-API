@@ -83,22 +83,16 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item sidebar-item  has-sub">
-                                    <a href="#" class='sidebar-link'>
+                                    <a href="" class='sidebar-link'>
                                         {{-- <i class="bi bi-hexagon-fill"></i> --}}
                                         <span>English Grammer</span>
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('english.noun') }}">Noun</a>
+                                            <a href="{{ route('english.grammer.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('english.pronoun') }}">Pronoun</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.verb') }}">Verb</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.adverb') }}">Adverb</a>
+                                            <a href="{{ route('english.grammer.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -109,13 +103,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('learn.english.oldperiod') }}">The Old English Period</a>
+                                            <a href="{{ route('english.literature.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('learn.english.middleperiod') }}">The Middle English Period</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('learn.english.romanticperiod') }}">The Romantice Period</a>
+                                            <a href="{{ route('english.literature.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -125,16 +116,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangla.languagegrammer') }}">ভাষা ও ব্যাকরণ</a>
+                                            <a href="{{ route('bangla.grammer.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangla.dhoniborno') }}">ধ্বনি, বর্ণ ও যুক্তবর্ণ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">ণ-ত্ব বিধান ও ষ-ত্ব বিধান</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">সন্ধি</a>
+                                            <a href="{{ route('bangla.grammer.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -144,39 +129,27 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangla.prachinzug') }}">প্রাচীন যুগ</a>
+                                            <a href="{{ route('bangla.literature.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangla.moddozug') }}">মধ্য যুগ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.adhunikzug') }}">আধুনিক যুগ</a>
+                                            <a href="{{ route('bangla.lit.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
-                                        <span>পাটিগণিত</span>
+                                        <span>গণিত</span>
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('math.realnumber') }}">বাস্তব সংখ্যা</a>
+                                            <a href="{{ route('math.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('math.square') }}">বর্গমূল ও পূর্ণসংখ্যা</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.lcmgcm') }}">লসাগু ও গসাগু</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.average') }}">গড়</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.fraction') }}">ভগ্নাংশ</a>
+                                            <a href="{{ route('math.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="submenu-item sidebar-item  has-sub">
+                                {{-- <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         <span>বীজগণিত</span>
                                     </a>
@@ -191,26 +164,17 @@
                                             <a href="{{ route('math.algebra3') }}">উৎপাদকে বিশ্লেষণ</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         <span>আন্তর্জাতিক বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('interaff.worldintro') }}">বিশ্ব পরিচিতি</a>
+                                            <a href="{{ route('intaff.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('interaff.asia') }}">এশিয়া</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.europe') }}">ইউরোপ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.africa') }}">আফ্রিকা</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.australia') }}">অস্ট্রেলিয়া</a>
+                                            <a href="{{ route('intaff.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -305,6 +269,45 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>Newspaper</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        {{-- <i class="bi bi-hexagon-fill"></i> --}}
+                                        <span>Bangladeshi</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item" >
+                                            <a href="https://www.prothomalo.com/" target="_blank">Prothom Alo</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="https://www.ittefaq.com.bd/" target="_blank">Ittefaq</a>
+                                        </li>
+                                        <li class="submenu-item ">
+                                            <a href="https://www.jugantor.com/" target="_blank">Jugantor</a>
+                                        </li>
+                                        <li class="submenu-item ">
+                                            <a href="https://www.thedailystar.net/" target="_blank">The Daily Star</a>
+                                        </li>
+                                        <li class="submenu-item ">
+                                            <a href="https://thefinancialexpress.com.bd/" target="_blank">The Financial Express</a>
+                                        </li>
+                                        <li class="submenu-item ">
+                                            <a href="https://bonikbarta.net/" target="_blank">Bonik Barta</a>
+                                        </li>
+                                        <li class="submenu-item ">
+                                            <a href="https://thedailycampus.com/" target="_blank">The Daily Campus</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -414,18 +417,6 @@
                                         <span>English</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.noun') }}">Noun</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.pronoun') }}">Pronoun</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.verb') }}">Verb</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('english.adverb') }}">Adverb</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -434,15 +425,6 @@
                                         <span>Literature</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('learn.english.oldperiod') }}">The Old English Period</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('learn.english.middleperiod') }}">The Middle English Period</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('learn.english.romanticperiod') }}">The Romantice Period</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -450,18 +432,7 @@
                                         <span>বাংলা ব্যাকরণ</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.languagegrammer') }}">ভাষা ও ব্যাকরণ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.dhoniborno') }}">ধ্বনি, বর্ণ ও যুক্তবর্ণ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">ণ-ত্ব বিধান ও ষ-ত্ব বিধান</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">সন্ধি</a>
-                                        </li>
+
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -469,15 +440,7 @@
                                         <span>বাংলা সাহিত্য</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.prachinzug') }}">প্রাচীন যুগ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.moddozug') }}">মধ্য যুগ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangla.adhunikzug') }}">আধুনিক যুগ</a>
-                                        </li>
+
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -485,21 +448,7 @@
                                         <span>পাটিগণিত</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.realnumber') }}">বাস্তব সংখ্যা</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.square') }}">বর্গমূল ও পূর্ণসংখ্যা</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.lcmgcm') }}">লসাগু ও গসাগু</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.average') }}">গড়</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.fraction') }}">ভগ্নাংশ</a>
-                                        </li>
+
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -507,15 +456,7 @@
                                         <span>বীজগণিত</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.algebra1') }}">বীজগাণিতিক রাশি</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.algebra2') }}">বীজগানিতিক সূত্রাবলী</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('math.algebra3') }}">উৎপাদকে বিশ্লেষণ</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -523,21 +464,7 @@
                                         <span>আন্তর্জাতিক বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.worldintro') }}">বিশ্ব পরিচিতি</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.asia') }}">এশিয়া</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.europe') }}">ইউরোপ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.africa') }}">আফ্রিকা</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('interaff.australia') }}">অস্ট্রেলিয়া</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">

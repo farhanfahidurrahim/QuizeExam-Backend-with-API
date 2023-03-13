@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('learns', function (Blueprint $table) {
             $table->id();
             $table->string('subject_name');
-            $table->string('topic_name');
+            $table->unsignedBigInteger('topic_name');
             $table->string('title');
             $table->string('pdf_file_path');
             $table->timestamps();
+            $table->foreign('topic_name')->references('id')->on('category_englishes')->onDelete('cascade');
         });
     }
 

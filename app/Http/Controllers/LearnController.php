@@ -3,14 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CategoryEnglish;
+use App\Models\CategoryEnglishLiterature;
+use App\Models\CategoryBanglaGrammer;
+use App\Models\CategoryBanglaLiterature;
+use App\Models\CategoryMath;
 use App\Models\Learn;
+use App\Models\LearnEnglishLiterature;
+use App\Models\LearnBanglaGrammer;
+use App\Models\LearnBanglaLiterature;
+use App\Models\LearnMath;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Illuminate\Support\Str;
 
 class LearnController extends Controller
-{
-    public function learnEnglishStore(Request $request){
+{   
+    public function indexEnglishGrammer()
+    {   
+        $data=Learn::where('subject_name','=','English Grammer')->orderBy('topic_name', 'desc')->get();
+        $category=CategoryEnglish::all();
+        return view('Learn.EnglishGrammer.index',compact('category','data'));
+    }
+
+    public function storeIndexEnglishGrammer(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -29,9 +45,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/english/'),$filename);
+                    $file->move(public_path('file/pdf/learn/english_grammer/'),$filename);
                     // path
-                    $path="file/pdf/english/$filename";
+                    $path="file/pdf/learn/english_grammer/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -59,81 +75,25 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function nounDelete($id)
+    public function delete($id)
     {
         $data = Learn::findOrFail($id);
-        //dd($data);
         @unlink($data->pdf_file_path);
         $data->delete();
 
         return redirect()->back();
     }
 
-    public function noun()
+    ///////////////////////////English Literature/////////////////////////////////
+
+    public function indexEnglishLiterature()
     {   
-        $data = Learn::where('topic_name','=','Noun')->get();
-        return view('Learn.EnglishGrammer.noun',compact('data'));
+        $data=LearnEnglishLiterature::where('subject_name','=','English Literature')->orderBy('topic_name', 'desc')->get();
+        $category=CategoryEnglishLiterature::all();
+        return view('Learn.EnglishLiterature.index',compact('category','data'));
     }
 
-    public function pronoun()
-    {   
-        $data = Learn::where('topic_name','=','Pronoun')->get();
-        return view('Learn.EnglishGrammer.pronoun',compact('data'));
-    }
-
-    public function pronounDelete($id)
-    {
-        $data = Learn::findOrFail($id);
-        //dd($data);
-        @unlink($data->pdf_file_path);
-        $data->delete();
-
-        return redirect()->back();
-    }
-
-    public function verb()
-    {   
-        $data = Learn::where('topic_name','=','Verb')->get();
-        return view('Learn.EnglishGrammer.verb',compact('data'));
-    }
-
-    public function adverb()
-    {   
-        $data = Learn::where('topic_name','=','Adverb')->get();
-        return view('Learn.EnglishGrammer.adverb',compact('data'));
-    }
-
-    public function oldPeriod()
-    {   
-        $data = Learn::where('subject_name','=','Old Period')->get();
-        return view('Learn.EnglishLiterature.old_period',compact('data'));
-    }
-
-    public function oldPeiodDelete($id)
-    {
-        $data = Learn::findOrFail($id);
-        //dd($data);
-        @unlink($data->pdf_file_path);
-        $data->delete();
-
-        return redirect()->back();
-    }
-
-    public function middlePeriod()
-    {   
-        $data = Learn::where('subject_name','=','Middle Period')->get();
-        return view('Learn.EnglishLiterature.middle_period',compact('data'));
-    }
-
-    public function romanticPeriod()
-    {
-        $data = Learn::where('subject_name','=','Romantic Period')->get();
-        return view('Learn.EnglishLiterature.romantic_period',compact('data'));
-    }
-
-    ///////////////////////////////////////////////////////
-
-    public function learnBanglaStore(Request $request){
+    public function storeIndexEnglishLiterature(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -152,9 +112,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/bangla/'),$filename);
+                    $file->move(public_path('file/pdf/learn/english_literature/'),$filename);
                     // path
-                    $path="file/pdf/bangla/$filename";
+                    $path="file/pdf/learn/english_literature/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -164,7 +124,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnEnglishLiterature::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -182,39 +142,9 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function languageGrammer()
-    {
-        $data = Learn::where('topic_name','=','Language Grammer')->get();
-        return view('Learn.BanglaGrammer.language_grammer',compact('data'));
-    }
+    ///////////////////////Bangla Grammer////////////////////////////////
 
-    public function dhoniborno()
-    {
-        $data = Learn::where('topic_name','=','Dhoni Borno Juktoborno')->get();
-        return view('Learn.BanglaGrammer.dhoni_borno',compact('data'));
-    }
-
-    public function prachinzug()
-    {
-        $data = Learn::where('topic_name','=','Prachin Zug')->get();
-        return view('Learn.BanglaGrammer.prachinzug',compact('data'));
-    }
-
-    public function moddozug()
-    {
-        $data = Learn::where('topic_name','=','Moddo Zug')->get();
-        return view('Learn.BanglaGrammer.moddozug',compact('data'));
-    }
-
-    public function adhunikzug()
-    {
-        $data = Learn::where('topic_name','=','Modern Era')->get();
-        return view('Learn.BanglaGrammer.adhunikzug',compact('data'));
-    }
-
-    ///////////////////////////////////////////////////////
-
-    public function learnMathStore(Request $request){
+    public function storeIndexBnGram(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -233,9 +163,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/math/'),$filename);
+                    $file->move(public_path('file/pdf/learn/bangla_grammer/'),$filename);
                     // path
-                    $path="file/pdf/math/$filename";
+                    $path="file/pdf/learn/bangla_grammer/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -245,7 +175,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnBanglaGrammer::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -263,52 +193,127 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function realnumber()
+    public function indexBnGram()
     {
-        $data = Learn::where('topic_name','=','Real Number')->get();
-        return view('Learn.Math.realnumber',compact('data'));
+        $data = LearnBanglaGrammer::where('subject_name','=','Language Grammer')->get();
+        $category=CategoryBanglaGrammer::all();
+        return view('Learn.BanglaGrammer.index',compact('data','category'));
     }
 
-    public function squareInteger()
-    {
-        $data = Learn::where('topic_name','=','Square-Integer')->get();
-        return view('Learn.Math.square_integer',compact('data'));
+    ///////////////////////Bangla Literature////////////////////////////////
+
+    public function storeIndexBnLit(Request $request){
+        //dd($request->all());
+        $validator = Validator::make($request->all(), [
+              'title' => 'required',
+              'pdf_file_path' => 'required|mimes:pdf'
+        ]);
+
+        $slug=Str::slug($request->title, '-');
+
+        if ($validator->fails()) {
+          return redirect()->Back()->withInput()->withErrors($validator);
+        }else{
+
+              if($request->file('pdf_file_path')) {
+
+                    $file = $request->file('pdf_file_path');
+                    //$filename = $file->hashName();
+                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
+                    // Upload file
+                    $file->move(public_path('file/pdf/learn/bangla_literature/'),$filename);
+                    // path
+                    $path="file/pdf/learn/bangla_literature/$filename";
+
+                    // Insert record
+                    $insertData_arr = array(
+                        'subject_name' => $request->subject_name,
+                        'topic_name' => $request->topic_name,
+                        'title' => $request->title,
+                        'pdf_file_path' => $path,
+                    );
+                    //dd($insertData_arr);
+                    LearnBanglaLiterature::create($insertData_arr);
+
+                    // Session
+                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('message','Record inserted successfully.');
+
+                }else{
+
+                    // Session
+                    Session::flash('alert-class', 'alert-danger');
+                    Session::flash('message','Record not inserted');
+            }
+
+        }
+
+        return redirect()->back();
     }
 
-    public function lcmgcm()
+    public function indexBnLit()
     {
-        $data = Learn::where('topic_name','=','Lcm-Gcm')->get();
-        return view('Learn.Math.lcm_gcm',compact('data'));
+        $data = LearnBanglaLiterature::where('subject_name','=','Bangla Literature')->get();
+        $category=CategoryBanglaLiterature::all();
+        return view('Learn.BanglaLiterature.index',compact('data','category'));
     }
 
-    public function average()
-    {
-        $data = Learn::where('topic_name','=','Average')->get();
-        return view('Learn.Math.average',compact('data'));
+    /////////////////////// Math ////////////////////////////////
+
+    public function storeIndexMath(Request $request){
+        //dd($request->all());
+        $validator = Validator::make($request->all(), [
+              'title' => 'required',
+              'pdf_file_path' => 'required|mimes:pdf'
+        ]);
+
+        $slug=Str::slug($request->title, '-');
+
+        if ($validator->fails()) {
+          return redirect()->Back()->withInput()->withErrors($validator);
+        }else{
+
+              if($request->file('pdf_file_path')) {
+
+                    $file = $request->file('pdf_file_path');
+                    //$filename = $file->hashName();
+                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
+                    // Upload file
+                    $file->move(public_path('file/pdf/learn/math/'),$filename);
+                    // path
+                    $path="file/pdf/learn/math/$filename";
+
+                    // Insert record
+                    $insertData_arr = array(
+                        'subject_name' => $request->subject_name,
+                        'topic_name' => $request->topic_name,
+                        'title' => $request->title,
+                        'pdf_file_path' => $path,
+                    );
+                    //dd($insertData_arr);
+                    LearnMath::create($insertData_arr);
+
+                    // Session
+                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('message','Record inserted successfully.');
+
+                }else{
+
+                    // Session
+                    Session::flash('alert-class', 'alert-danger');
+                    Session::flash('message','Record not inserted');
+            }
+
+        }
+
+        return redirect()->back();
     }
 
-    public function fraction()
+    public function indexMath()
     {
-        $data = Learn::where('topic_name','=','Fraction')->get();
-        return view('Learn.Math.fraction',compact('data'));
-    }
-
-    public function algebra1()
-    {
-        $data = Learn::where('topic_name','=','Algebraic Expressions')->get();
-        return view('Learn.Math.algebra1',compact('data'));
-    }
-
-    public function algebra2()
-    {
-        $data = Learn::where('topic_name','=','Algebraic Formulas')->get();
-        return view('Learn.Math.algebra2',compact('data'));
-    }
-
-    public function algebra3()
-    {
-        $data = Learn::where('topic_name','=','Analyze Product')->get();
-        return view('Learn.Math.algebra3',compact('data'));
+        $data = LearnMath::get();
+        $category=CategoryMath::all();
+        return view('Learn.Math.index',compact('data','category'));
     }
 
     ///////////////////////////////////////////////////////
@@ -688,54 +693,54 @@ class LearnController extends Controller
 
     ///////////////////////////////////////////////////////
 
-    public function bankStore(Request $request){
-        //dd($request->all());
-        $validator = Validator::make($request->all(), [
-              'title' => 'required',
-              'pdf_file_path' => 'required|mimes:pdf'
-        ]);
+    // public function bankStore(Request $request){
+    //     //dd($request->all());
+    //     $validator = Validator::make($request->all(), [
+    //           'title' => 'required',
+    //           'pdf_file_path' => 'required|mimes:pdf'
+    //     ]);
 
-        $slug=Str::slug($request->title, '-');
+    //     $slug=Str::slug($request->title, '-');
 
-        if ($validator->fails()) {
-          return redirect()->Back()->withInput()->withErrors($validator);
-        }else{
+    //     if ($validator->fails()) {
+    //       return redirect()->Back()->withInput()->withErrors($validator);
+    //     }else{
 
-              if($request->file('pdf_file_path')) {
+    //           if($request->file('pdf_file_path')) {
 
-                    $file = $request->file('pdf_file_path');
-                    //$filename = $file->hashName();
-                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
-                    // Upload file
-                    $file->move(public_path('file/pdf/computerIct/'),$filename);
-                    // path
-                    $path="file/pdf/computerIct/$filename";
+    //                 $file = $request->file('pdf_file_path');
+    //                 //$filename = $file->hashName();
+    //                 $filename = $slug.'.'.$file->getClientOriginalExtension();;
+    //                 // Upload file
+    //                 $file->move(public_path('file/pdf/computerIct/'),$filename);
+    //                 // path
+    //                 $path="file/pdf/computerIct/$filename";
 
-                    // Insert record
-                    $insertData_arr = array(
-                        'subject_name' => $request->subject_name,
-                        'topic_name' => $request->topic_name,
-                        'title' => $request->title,
-                        'pdf_file_path' => $path,
-                    );
-                    //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+    //                 // Insert record
+    //                 $insertData_arr = array(
+    //                     'subject_name' => $request->subject_name,
+    //                     'topic_name' => $request->topic_name,
+    //                     'title' => $request->title,
+    //                     'pdf_file_path' => $path,
+    //                 );
+    //                 //dd($insertData_arr);
+    //                 Learn::create($insertData_arr);
 
-                    // Session
-                    Session::flash('alert-class', 'alert-success');
-                    Session::flash('message','Record inserted successfully.');
+    //                 // Session
+    //                 Session::flash('alert-class', 'alert-success');
+    //                 Session::flash('message','Record inserted successfully.');
 
-                }else{
+    //             }else{
 
-                    // Session
-                    Session::flash('alert-class', 'alert-danger');
-                    Session::flash('message','Record not inserted');
-            }
+    //                 // Session
+    //                 Session::flash('alert-class', 'alert-danger');
+    //                 Session::flash('message','Record not inserted');
+    //         }
 
-        }
+    //     }
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
     public function caBangladesh()
     {

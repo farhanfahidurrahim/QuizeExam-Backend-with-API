@@ -5,6 +5,7 @@ use App\Http\Controllers\LearnController;
 use App\Http\Controllers\VocabularyController;
 use App\Http\Controllers\EbookController;
 use App\Http\Controllers\CurrentAffairController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,56 +41,72 @@ Route::get("/courses/store/",function (){
 //Route::post("/courses/store",[\App\Http\Controllers\CoursesController::class,"store"])->name("courses.store")->middleware("auth");
 
 //Learn Controller
+Route::DELETE('delete/{id}',[LearnController::class,'delete'])->name('learn.destroy')->middleware('auth');
 
+//English Grammer 
 Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
-    Route::post('store',[LearnController::class,'learnEnglishStore'])->name('learn.english.store');
 
-    Route::get('noun',[LearnController::class,'noun'])->name('english.noun')->middleware("auth");
-    Route::DELETE('delete/{id}',[LearnController::class,'nounDelete'])->name('learn.noun.destroy');
-    Route::get('pronoun',[LearnController::class,'pronoun'])->name('english.pronoun');
-    Route::get('verb',[LearnController::class,'verb'])->name('english.verb')->middleware("auth");
-    Route::get('adverb',[LearnController::class,'adverb'])->name('english.adverb')->middleware("auth");
+    Route::get('add-category',[CategoryController::class,'addCatEnglishGrammer'])->name('english.grammer.add');
+    Route::post('store-category',[CategoryController::class,'storeCatEnglishGrammer'])->name('english.category.store');
+    Route::DELETE('xyz/{id}',[CategoryController::class,'deleteEngGram'])->name('learn.noun.destroy');
+
+    Route::get('index',[LearnController::class,'indexEnglishGrammer'])->name('english.grammer.index');
+    Route::post('store',[LearnController::class,'storeIndexEnglishGrammer'])->name('learn.english.store');
 });
 
+//English Literature 
 Route::prefix('learn/english-literature/')->middleware('auth')->group(function(){
 
-    Route::get('old-period',[LearnController::class,'oldPeriod'])->name('learn.english.oldperiod');
-    Route::get('middle-period',[LearnController::class,'middlePeriod'])->name('learn.english.middleperiod');
-    Route::get('romantic-period',[LearnController::class,'romanticPeriod'])->name('learn.english.romanticperiod');
+    Route::get('add-category',[CategoryController::class,'addCatEnglishLiterature'])->name('english.literature.add');
+    Route::post('store-category',[CategoryController::class,'storeCatEnglishLiterature'])->name('english.lit.category.store');
+    Route::DELETE('delete/{id}',[CategoryController::class,'deleteEngLit'])->name('catenglit.destroy');
+
+    Route::get('index',[LearnController::class,'indexEnglishLiterature'])->name('english.literature.index');
+    Route::post('store',[LearnController::class,'storeIndexEnglishLiterature'])->name('english.literature.store');
 });
 
-Route::prefix('learn/bangla/')->middleware('auth')->group(function(){
-    Route::post('store',[LearnController::class,'learnBanglaStore'])->name('learn.bangla.store');
+//Bangla Grammer
+Route::prefix('learn/bangla-grammer/')->middleware('auth')->group(function(){
 
-    Route::get('language-grammer',[LearnController::class,'languageGrammer'])->name('bangla.languagegrammer');
-    Route::get('dhoni-borno-juktoborno',[LearnController::class,'dhoniborno'])->name('bangla.dhoniborno');
-    Route::get('prachin-zug',[LearnController::class,'prachinzug'])->name('bangla.prachinzug');
-    Route::get('moddo-zug',[LearnController::class,'moddozug'])->name('bangla.moddozug');
-    Route::get('modern-era',[LearnController::class,'adhunikzug'])->name('bangla.adhunikzug');
+    Route::get('add-category',[CategoryController::class,'addCatBnGram'])->name('bangla.grammer.add');
+    Route::post('store-category',[CategoryController::class,'storeCatBnGram'])->name('bangla.gram.category.store');
+    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteEngLit'])->name('catenglit.destroy');
+
+    Route::get('index',[LearnController::class,'indexBnGram'])->name('bangla.grammer.index');
+    Route::post('store',[LearnController::class,'storeIndexBnGram'])->name('bangla.grammer.store');
 });
 
+//Bangla Literature
+Route::prefix('learn/bangla-literature/')->middleware('auth')->group(function(){
+
+    Route::get('add-category',[CategoryController::class,'addCatBnLit'])->name('bangla.lit.cat.add');
+    Route::post('store-category',[CategoryController::class,'storeCatBnLit'])->name('bangla.lit.cat.store');
+    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+
+    Route::get('index',[LearnController::class,'indexBnLit'])->name('bangla.literature.index');
+    Route::post('store',[LearnController::class,'storeIndexBnLit'])->name('bangla.literature.store');
+});
+
+//Math
 Route::prefix('learn/math/')->middleware('auth')->group(function(){
-    Route::post('store',[LearnController::class,'learnMathStore'])->name('learn.math.store');
 
-    Route::get('realnumber',[LearnController::class,'realnumber'])->name('math.realnumber');
-    Route::get('squareinteger',[LearnController::class,'squareInteger'])->name('math.square');
-    Route::get('lcmgcm',[LearnController::class,'lcmgcm'])->name('math.lcmgcm');
-    Route::get('average',[LearnController::class,'average'])->name('math.average');
-    Route::get('fraction',[LearnController::class,'fraction'])->name('math.fraction');
+    Route::get('add-category',[CategoryController::class,'addCatMath'])->name('math.cat.add');
+    Route::post('store-category',[CategoryController::class,'storeCatMath'])->name('math.cat.store');
+    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
 
-    Route::get('algebra1',[LearnController::class,'algebra1'])->name('math.algebra1');
-    Route::get('algebra2',[LearnController::class,'algebra2'])->name('math.algebra2');
-    Route::get('algebra3',[LearnController::class,'algebra3'])->name('math.algebra3');
+    Route::get('index',[LearnController::class,'indexMath'])->name('math.index');
+    Route::post('store',[LearnController::class,'storeIndexMath'])->name('math.store');
 });
 
+//Math
 Route::prefix('learn/international-affairs/')->middleware('auth')->group(function(){
-    Route::post('store',[LearnController::class,'learnIntAffStore'])->name('learn.interaff.store');
 
-    Route::get('worldintro',[LearnController::class,'worldintro'])->name('interaff.worldintro');
-    Route::get('asia',[LearnController::class,'asia'])->name('interaff.asia');
-    Route::get('europe',[LearnController::class,'europe'])->name('interaff.europe');
-    Route::get('africa',[LearnController::class,'africa'])->name('interaff.africa');
-    Route::get('australia',[LearnController::class,'australia'])->name('interaff.australia');
+    Route::get('add-category',[CategoryController::class,'addCatMath'])->name('intaff.cat.add');
+    Route::post('store-category',[CategoryController::class,'storeCatMath'])->name('math.cat.store');
+    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+
+    Route::get('index',[LearnController::class,'indexMath'])->name('intaff.index');
+    Route::post('store',[LearnController::class,'storeIndexMath'])->name('math.store');
 });
 
 Route::prefix('learn/bangladesh-affairs/')->middleware('auth')->group(function(){
