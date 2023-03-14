@@ -35,7 +35,7 @@
                                         <select name="topic_name" class="form-control" required>
                                             <option disabled selected value="">Select Topic</option>
                                            	@foreach($category as $row)		
-                                                <option value="{{ $row->id }}">{{ $row->english_category }}</option>
+                                                <option value="{{ $row->id }}">{{ $row->category_name }}</option>
                                             @endforeach
                                         </select>
                                         </div>
@@ -89,7 +89,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$result->subject_name}}</td>
-                                <td>{{$result->categoryenglish->english_category}}</td>
+                                <td>{{$result->catengram->category_name}}</td>
                                 <td>{{$result->title}}</td>
                                 <td>{{$result->pdf_file_path}}</td>
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>

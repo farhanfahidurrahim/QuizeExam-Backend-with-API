@@ -47,8 +47,8 @@ Route::DELETE('delete/{id}',[LearnController::class,'delete'])->name('learn.dest
 //English Grammer 
 Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
 
-    Route::get('add-category',[CategoryController::class,'addCatEnglishGrammer'])->name('english.grammer.add');
-    Route::post('store-category',[CategoryController::class,'storeCatEnglishGrammer'])->name('english.category.store');
+    Route::get('add-category',[CategoryController::class,'addCatEngGram'])->name('english.grammer.add');
+    Route::post('store-category',[CategoryController::class,'storeCatEngGram'])->name('english.category.store');
     Route::DELETE('xyz/{id}',[CategoryController::class,'deleteEngGram'])->name('learn.noun.destroy');
 
     Route::get('index',[LearnController::class,'indexEnglishGrammer'])->name('english.grammer.index');
@@ -58,8 +58,8 @@ Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
 //English Literature 
 Route::prefix('learn/english-literature/')->middleware('auth')->group(function(){
 
-    Route::get('add-category',[CategoryController::class,'addCatEnglishLiterature'])->name('english.literature.add');
-    Route::post('store-category',[CategoryController::class,'storeCatEnglishLiterature'])->name('english.lit.category.store');
+    Route::get('add-category',[CategoryController::class,'addCatEngLiter'])->name('english.literature.add');
+    Route::post('store-category',[CategoryController::class,'storeCatEngLiter'])->name('english.lit.category.store');
     Route::DELETE('delete/{id}',[CategoryController::class,'deleteEngLit'])->name('catenglit.destroy');
 
     Route::get('index',[LearnController::class,'indexEnglishLiterature'])->name('english.literature.index');
@@ -170,9 +170,9 @@ Route::prefix('bank/')->middleware('auth')->group(function(){
     Route::post('store',[BankController::class,'storeBankEnglish'])->name('bank.store');
 
     Route::get('english/index',[BankController::class,'indexEnglish'])->name('bank.english');
-    Route::get('english/math',[BankController::class,'bankMath'])->name('bank.math');
-    Route::get('english/bangla',[BankController::class,'bankBangla'])->name('bank.bangla');
-    Route::get('english/computer',[BankController::class,'bankComputer'])->name('bank.computer');
+    Route::get('bangla/index',[BankController::class,'indexBangla'])->name('bank.bangla');
+    Route::get('math/index',[BankController::class,'indexMath'])->name('bank.math');
+    Route::get('computer/index',[BankController::class,'indexComputer'])->name('bank.computer');
 });
 
 //Vocabulary Part :

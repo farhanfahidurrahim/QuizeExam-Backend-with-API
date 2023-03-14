@@ -80,7 +80,7 @@
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         
-                                        <span>Literature</span>
+                                        <span>English Literature</span>
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 //Learn Part : Model [Category/Topic]
 use Illuminate\Http\Request;
-use App\Models\CategoryEnglish;
+use App\Models\CategoryEnglishGrammer;
 use App\Models\CategoryEnglishLiterature;
 use App\Models\CategoryBanglaGrammer;
 use App\Models\CategoryBanglaLiterature;
@@ -24,31 +24,31 @@ class CategoryController extends Controller
 {   
     ///////////////////// Learn -> English Grammer////////////////////////
 
-    public function addCatEnglishGrammer()
+    public function addCatEngGram()
     {   
-        $data = CategoryEnglish::all();
+        $data = CategoryEnglishGrammer::all();
         return view('Learn.EnglishGrammer.add_category',compact('data'));
     }
 
-    public function storeCatEnglishGrammer(Request $request)
+    public function storeCatEngGram(Request $request)
     {
         $insertData_arr = array(
-            'english_category' => $request->english_category,
+            'category_name' => $request->category_name,
         );
 
-        CategoryEnglish::create($insertData_arr);
+        CategoryEnglishGrammer::create($insertData_arr);
         return redirect()->back();
     }
 
-    ////////////////////////English Literature/////////////////////////////
+    ///////////////////// Learn -> English Literature//////////////////////
 
-    public function addCatEnglishLiterature()
+    public function addCatEngLiter()
     {   
         $data = CategoryEnglishLiterature::all();
         return view('Learn.EnglishLiterature.add_category',compact('data'));
     }
 
-    public function storeCatEnglishLiterature(Request $request)
+    public function storeCatEngLiter(Request $request)
     {
         $insertData_arr = array(
             'category_name' => $request->category_name,

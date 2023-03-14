@@ -31,7 +31,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="city-column">Add Category</label>
-                                            <input type="text" id="city-column" class="form-control" placeholder="Enter Category" name="english_category" required>
+                                            <input type="text" id="city-column" class="form-control" placeholder="Enter Category" name="category_name" required>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
@@ -65,7 +65,7 @@
                         @foreach($data as $result)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{$result->english_category}}</td>
+                                <td>{{$result->category_name}}</td>
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>
                                 </td> --}}
                                 <td class="d-flex">

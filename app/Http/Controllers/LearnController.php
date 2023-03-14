@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CategoryEnglish;
+use App\Models\CategoryEnglishGrammer;
 use App\Models\CategoryEnglishLiterature;
 use App\Models\CategoryBanglaGrammer;
 use App\Models\CategoryBanglaLiterature;
@@ -14,7 +14,8 @@ use App\Models\CategoryGeographyEnvironment;
 use App\Models\CategoryComputerIct;
 use App\Models\CategoryMentalSkill;
 use App\Models\CategoryEthicsValueGoverance;
-use App\Models\Learn;
+
+use App\Models\LearnEnglishGrammer;
 use App\Models\LearnEnglishLiterature;
 use App\Models\LearnBanglaGrammer;
 use App\Models\LearnBanglaLiterature;
@@ -33,8 +34,8 @@ class LearnController extends Controller
 {   
     public function indexEnglishGrammer()
     {   
-        $data=Learn::where('subject_name','=','English Grammer')->orderBy('topic_name', 'desc')->get();
-        $category=CategoryEnglish::all();
+        $data=LearnEnglishGrammer::all();
+        $category=CategoryEnglishGrammer::all();
         return view('Learn.EnglishGrammer.index',compact('category','data'));
     }
 
@@ -69,7 +70,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnEnglishGrammer::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -89,7 +90,7 @@ class LearnController extends Controller
 
     public function delete($id)
     {
-        $data = Learn::findOrFail($id);
+        $data = LearnEnglishGrammer::findOrFail($id);
         @unlink($data->pdf_file_path);
         $data->delete();
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('category_englishes', function (Blueprint $table) {
             $table->id();
-            $table->string('english_category');
+            $table->string('category_name');
             $table->timestamps();
         });
     }

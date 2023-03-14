@@ -64,13 +64,19 @@ class BankController extends Controller
         return view('Bank.english',compact('data'));
     }
 
-    public function caInternational()
+    public function indexBangla()
     {
         $data = Learn::where('subject_name','=','Computer Ict')->get();
         return view('CurrentAffairs.international',compact('data'));
     }
 
-    public function caMIsc()
+    public function indexMath()
+    {
+        $data = Learn::where('subject_name','=','Computer Ict')->get();
+        return view('CurrentAffairs.misc',compact('data'));
+    }
+
+    public function indexComputer()
     {
         $data = Learn::where('subject_name','=','Computer Ict')->get();
         return view('CurrentAffairs.misc',compact('data'));
