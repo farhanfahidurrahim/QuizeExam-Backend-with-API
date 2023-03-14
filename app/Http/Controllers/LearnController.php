@@ -8,11 +8,23 @@ use App\Models\CategoryEnglishLiterature;
 use App\Models\CategoryBanglaGrammer;
 use App\Models\CategoryBanglaLiterature;
 use App\Models\CategoryMath;
+use App\Models\CategoryInternationalAffair;
+use App\Models\CategoryBangladeshAffair;
+use App\Models\CategoryGeographyEnvironment;
+use App\Models\CategoryComputerIct;
+use App\Models\CategoryMentalSkill;
+use App\Models\CategoryEthicsValueGoverance;
 use App\Models\Learn;
 use App\Models\LearnEnglishLiterature;
 use App\Models\LearnBanglaGrammer;
 use App\Models\LearnBanglaLiterature;
 use App\Models\LearnMath;
+use App\Models\LearnInternationalAffair;
+use App\Models\LearnBangladeshAffair;
+use App\Models\LearnGeographyEnvironment;
+use App\Models\LearnComputerIct;
+use App\Models\LearnMentalSkill;
+use App\Models\LearnEthicsValueGoverance;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use Illuminate\Support\Str;
@@ -316,9 +328,9 @@ class LearnController extends Controller
         return view('Learn.Math.index',compact('data','category'));
     }
 
-    ///////////////////////////////////////////////////////
+    ////////////////////////International Affairs///////////////////////////////
 
-    public function learnIntAffStore(Request $request){
+    public function storeIndexIntAff(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -337,9 +349,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/internationalaffair/'),$filename);
+                    $file->move(public_path('file/pdf/learn/international_affairs/'),$filename);
                     // path
-                    $path="file/pdf/internationalaffair/$filename";
+                    $path="file/pdf/learn/international_affairs/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -349,7 +361,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnInternationalAffair::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -367,39 +379,17 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function worldintro()
+    public function indexIntAff()
     {
-        $data = Learn::where('topic_name','=','World Intro')->get();
-        return view('Learn.InternationalAffair.worldintro',compact('data'));
+        $data = LearnInternationalAffair::get();
+        $category=CategoryInternationalAffair::all();
+        return view('Learn.InternationalAffairs.index',compact('data','category'));
     }
 
-    public function asia()
-    {
-        $data = Learn::where('topic_name','=','Asia')->get();
-        return view('Learn.InternationalAffair.asia',compact('data'));
-    }
 
-    public function europe()
-    {
-        $data = Learn::where('topic_name','=','Europe')->get();
-        return view('Learn.InternationalAffair.europe',compact('data'));
-    }
+    ////////////////////////Bangladesh Affairs///////////////////////////////
 
-    public function africa()
-    {
-        $data = Learn::where('topic_name','=','Africa')->get();
-        return view('Learn.InternationalAffair.africa',compact('data'));
-    }
-
-    public function australia()
-    {
-        $data = Learn::where('topic_name','=','Australia')->get();
-        return view('Learn.InternationalAffair.australia',compact('data'));
-    }
-
-    ///////////////////////////////////////////////////////
-
-    public function bangladeshAffStore(Request $request){
+    public function storeIndexBdAff(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -418,9 +408,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/bangladeshaffair/'),$filename);
+                    $file->move(public_path('file/pdf/learn/bangladesh_affairs/'),$filename);
                     // path
-                    $path="file/pdf/bangladeshaffair/$filename";
+                    $path="file/pdf/learn/bangladesh_affairs/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -430,7 +420,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnBangladeshAffair::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -448,27 +438,16 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function britishperiod()
+    public function indexBdAff()
     {
-        $data = Learn::where('topic_name','=','British Period')->get();
-        return view('Learn.BangladeshAffair.british_period',compact('data'));
+        $data = LearnBangladeshAffair::all();
+        $category=CategoryBangladeshAffair::all();
+        return view('Learn.BangladeshAffairs.index',compact('data','category'));
     }
 
-    public function pakiperiod()
-    {
-        $data = Learn::where('topic_name','=','Pakistan Period')->get();
-        return view('Learn.BangladeshAffair.paki_period',compact('data'));
-    }
+    ////////////////////////Geography Environment///////////////////////////////
 
-    public function liberationwar()
-    {
-        $data = Learn::where('topic_name','=','Liberation War')->get();
-        return view('Learn.BangladeshAffair.liberation_war',compact('data'));
-    }
-
-    ///////////////////////////////////////////////////////
-
-    public function geoEnvStore(Request $request){
+    public function storeIndexGeoEnv(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -487,9 +466,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/geographyenvironment/'),$filename);
+                    $file->move(public_path('file/pdf/learn/geography_environment/'),$filename);
                     // path
-                    $path="file/pdf/geographyenvironment/$filename";
+                    $path="file/pdf/learn/geography_environment/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -499,7 +478,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnGeographyEnvironment::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -517,39 +496,16 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function geographyuniverse()
+    public function indexGeoEnv()
     {
-        $data = Learn::where('topic_name','=','Geography Universe')->get();
-        return view('Learn.GeographyEnvironment.geographyuniverse',compact('data'));
+        $data = LearnGeographyEnvironment::all();
+        $category=CategoryGeographyEnvironment::all();
+        return view('Learn.GeographyEnvironment.index',compact('data','category'));
     }
 
-    public function map()
-    {
-        $data = Learn::where('topic_name','=','Map')->get();
-        return view('Learn.GeographyEnvironment.map',compact('data'));
-    }
+    ////////////////////////Computer Ict///////////////////////////////
 
-    public function earthStrucutre()
-    {
-        $data = Learn::where('topic_name','=','Earth Structure')->get();
-        return view('Learn.GeographyEnvironment.earth_structure',compact('data'));
-    }
-
-    public function bangladesh()
-    {
-        $data = Learn::where('topic_name','=','Bangladesh')->get();
-        return view('Learn.GeographyEnvironment.bangladesh',compact('data'));
-    }
-
-    public function internationalGeo()
-    {
-        $data = Learn::where('topic_name','=','International Geography')->get();
-        return view('Learn.GeographyEnvironment.international_geography',compact('data'));
-    }
-
-    ///////////////////////////////////////////////////////
-
-    public function computerIct(Request $request){
+    public function storeIndexCompIct(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -568,9 +524,9 @@ class LearnController extends Controller
                     //$filename = $file->hashName();
                     $filename = $slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/computerIct/'),$filename);
+                    $file->move(public_path('file/pdf/learn/computer_ict/'),$filename);
                     // path
-                    $path="file/pdf/computerIct/$filename";
+                    $path="file/pdf/learn/computer_ict/$filename";
 
                     // Insert record
                     $insertData_arr = array(
@@ -580,7 +536,7 @@ class LearnController extends Controller
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    LearnComputerIct::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -598,22 +554,127 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function computerHistory()
+    public function indexCompIct()
     {
-        $data = Learn::where('topic_name','=','Computer History')->get();
-        return view('Learn.ComputerIct.computer_history',compact('data'));
+        $data = LearnComputerIct::all();
+        $category=CategoryComputerIct::all();
+        return view('Learn.ComputerIct.index',compact('data','category'));
     }
 
-    public function computerArchitec()
-    {
-        $data = Learn::where('topic_name','=','Computer Architec')->get();
-        return view('Learn.ComputerIct.computer_architec',compact('data'));
+    ////////////////////////Mental Skill///////////////////////////////
+
+    public function storeIndexMentSkill(Request $request){
+        //dd($request->all());
+        $validator = Validator::make($request->all(), [
+              'title' => 'required',
+              'pdf_file_path' => 'required|mimes:pdf'
+        ]);
+
+        $slug=Str::slug($request->title, '-');
+
+        if ($validator->fails()) {
+          return redirect()->Back()->withInput()->withErrors($validator);
+        }else{
+
+              if($request->file('pdf_file_path')) {
+
+                    $file = $request->file('pdf_file_path');
+                    //$filename = $file->hashName();
+                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
+                    // Upload file
+                    $file->move(public_path('file/pdf/learn/mental_skill/'),$filename);
+                    // path
+                    $path="file/pdf/learn/mental_skill/$filename";
+
+                    // Insert record
+                    $insertData_arr = array(
+                        'subject_name' => $request->subject_name,
+                        'topic_name' => $request->topic_name,
+                        'title' => $request->title,
+                        'pdf_file_path' => $path,
+                    );
+                    //dd($insertData_arr);
+                    LearnMentalSkill::create($insertData_arr);
+
+                    // Session
+                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('message','Record inserted successfully.');
+
+                }else{
+
+                    // Session
+                    Session::flash('alert-class', 'alert-danger');
+                    Session::flash('message','Record not inserted');
+            }
+
+        }
+
+        return redirect()->back();
     }
 
-    public function computerPeriferal()
+    public function indexMentSkill()
     {
-        $data = Learn::where('topic_name','=','Computer Periferal')->get();
-        return view('Learn.ComputerIct.computer_periferal',compact('data'));
+        $data = LearnMentalSkill::all();
+        $category=CategoryMentalSkill::all();
+        return view('Learn.MentalSkill.index',compact('data','category'));
+    }
+
+    ////////////////////// EthicsValueGoverance : EVG /////////////////////////
+
+    public function storeIndexEvg(Request $request){
+        //dd($request->all());
+        $validator = Validator::make($request->all(), [
+              'title' => 'required',
+              'pdf_file_path' => 'required|mimes:pdf'
+        ]);
+
+        $slug=Str::slug($request->title, '-');
+
+        if ($validator->fails()) {
+          return redirect()->Back()->withInput()->withErrors($validator);
+        }else{
+
+              if($request->file('pdf_file_path')) {
+
+                    $file = $request->file('pdf_file_path');
+                    //$filename = $file->hashName();
+                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
+                    // Upload file
+                    $file->move(public_path('file/pdf/learn/ethics_value_goverance/'),$filename);
+                    // path
+                    $path="file/pdf/learn/ethics_value_goverance/$filename";
+
+                    // Insert record
+                    $insertData_arr = array(
+                        'subject_name' => $request->subject_name,
+                        'topic_name' => $request->topic_name,
+                        'title' => $request->title,
+                        'pdf_file_path' => $path,
+                    );
+                    //dd($insertData_arr);
+                    LearnEthicsValueGoverance::create($insertData_arr);
+
+                    // Session
+                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('message','Record inserted successfully.');
+
+                }else{
+
+                    // Session
+                    Session::flash('alert-class', 'alert-danger');
+                    Session::flash('message','Record not inserted');
+            }
+
+        }
+
+        return redirect()->back();
+    }
+
+    public function indexEvg()
+    {
+        $data = LearnEthicsValueGoverance::all();
+        $category=CategoryEthicsValueGoverance::all();
+        return view('Learn.EthicsValueGoverance.index',compact('data','category'));
     }
 
     ///////////////////////////////////////////////////////

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Dashboard - Quize Exam</title>
     <link rel="stylesheet" href="{{asset('css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset("css/main/app-dark.css")}}">
     <link rel="shortcut icon" href="{{asset("images/logo/favicon.svg")}}" type="image/x-icon">
@@ -184,13 +184,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.britishperiod') }}">ব্রিটিশ আমল</a>
+                                            <a href="{{ route('bdaff.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.pakiperiod') }}">পাকিস্তান আমল</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.liberationwar') }}">মুক্তিযুদ্ধ</a>
+                                            <a href="{{ route('bdaff.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -200,19 +197,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('geoenv.geouniverse') }}">ভূগোল ও মহাবিশ্ব</a>
+                                            <a href="{{ route('geoenv.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('geoenv.map') }}">মানচিত্র</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.earthStrucutre') }}">পৃথিবীর গঠন</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.bangladesh') }}">বাংলাদেশ </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.internationalGeo') }}">আন্তর্জাতিক ভূগোল</a>
+                                            <a href="{{ route('geoenv.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -222,13 +210,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('compict.computerHistory') }}">কম্পিউটারের ইতিহাস</a>
+                                            <a href="{{ route('compict.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('compict.computerArchitecture') }}">কম্পিউটারের অঙ্গ সংগঠন</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('compict.computerPeriferal') }}">পেরিফেরাল</a>
+                                            <a href="{{ route('compict.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -238,16 +223,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">ভাষাগত যৌক্তিক বিচার</a>
+                                            <a href="{{ route('mentalskill.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">সমস্যা সমাধান </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">বানান ও ভাষা </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">যান্ত্রিক দক্ষতা</a>
+                                            <a href="{{ route('mentalskill.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -257,13 +236,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">সুশাসন</a>
+                                            <a href="{{ route('evg.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">মূল্যবোধ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">নৈতিকতা</a>
+                                            <a href="{{ route('evg.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -359,13 +335,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalMath') }}">সাধারণ গণিত</a>
+                                            <a href="{{ route('nineten.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.higherMath') }}">উচ্চতর গণিত</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalScience') }}">সাধারণ বিজ্ঞান</a>
+                                            <a href="{{ route('nineten.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -376,13 +349,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalMath8') }}">সাধারণ গণিত</a>
+                                            <a href="{{ route('eight.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.higherMath8') }}">উচ্চতর গণিত</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalScience8') }}">সাধারণ বিজ্ঞান</a>
+                                            <a href="{{ route('eight.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -393,13 +363,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalMath7') }}">সাধারণ গণিত</a>
+                                            <a href="{{ route('seven.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('ebook.higherMath7') }}">উচ্চতর গণিত</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('ebook.generalScience7') }}">সাধারণ বিজ্ঞান</a>
+                                            <a href="{{ route('seven.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -472,15 +439,7 @@
                                         <span>বাংলাদেশ বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.britishperiod') }}">ব্রিটিশ আমল</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.pakiperiod') }}">পাকিস্তান আমল</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('bangladeshaff.liberationwar') }}">মুক্তিযুদ্ধ</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -488,21 +447,7 @@
                                         <span>ভূগোল ও পরিবেশ</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.geouniverse') }}">ভূগোল ও মহাবিশ্ব</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.map') }}">মানচিত্র</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.earthStrucutre') }}">পৃথিবীর গঠন</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.bangladesh') }}">বাংলাদেশ </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('geoenv.internationalGeo') }}">আন্তর্জাতিক ভূগোল</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -510,15 +455,7 @@
                                         <span>কম্পিউটার ও তথ্য প্রযুক্তি</span>
                                     </a>
                                     <ul class="submenu ">
-                                        <li class="submenu-item">
-                                            <a href="{{ route('compict.computerHistory') }}">কম্পিউটারের ইতিহাস</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('compict.computerArchitecture') }}">কম্পিউটারের অঙ্গ সংগঠন</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="{{ route('compict.computerPeriferal') }}">পেরিফেরাল</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -558,7 +495,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item  has-sub">
+                        {{-- <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
                                 <span>Vocabulary</span>
@@ -569,11 +506,11 @@
                                         <i class="bi bi-hexagon-fill"></i>
                                         <span>Barrons 333</span>
                                     </a>
-                                    {{-- <ul class="submenu ">
+                                    <ul class="submenu ">
                                         <li class="submenu-item">
                                             <a href=""></a>
                                         </li>
-                                    </ul> --}}
+                                    </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="{{ route('vocabulary.barrons800') }}">
@@ -612,7 +549,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -707,6 +644,63 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>Vocabulary</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.barrons333') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Barrons 333</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href=""></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.barrons800') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Barrons 800</span>
+                                    </a>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.wordsmart1') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Word Smart-1</span>
+                                    </a>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.wordsmart2') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Word Smart-2</span>
+                                    </a>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.manhattan') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Manhattan-1000</span>
+                                    </a>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.magoosh') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Magoosh-1000</span>
+                                    </a>
+                                </li>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="{{ route('vocabulary.dailyeditorial') }}">
+                                        <i class="bi bi-hexagon-fill"></i>
+                                        <span>Daily Editorial</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         {{-- <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -736,6 +730,9 @@
                                 <span>Logout</span>
                             </a>
                         </li>
+
+                        
+
                     </ul>
                 </div>
             </div>
