@@ -6,8 +6,8 @@
         <div class="row match-height">
             <div class="col-12">
                 <div class="card">
-                    {{-- <div class="card-header">
-                        <h4 class="card-title">Add Bank : English - All PDF</h4>
+                     <div class="card-header">
+                        <h4 class="card-title">Add Bank : Bangla - All PDF</h4>
                     </div>
 
                      <!-- Alert message (start) -->
@@ -45,7 +45,7 @@
                             </form>
                         </div>
                     </div> 
-                </div>--}}
+                </div>
             </div>
         </div>
     </section>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\VocabularyController;
 use App\Http\Controllers\EbookController;
+use App\Http\Controllers\BankController;
 use App\Http\Controllers\CurrentAffairController;
 use App\Http\Controllers\CategoryController;
 /*
@@ -153,7 +154,7 @@ Route::prefix('learn/mental-skill/')->middleware('auth')->group(function(){
     Route::post('store',[LearnController::class,'storeIndexMentSkill'])->name('mentalskill.store');
 });
 
-//Ethics Value Governance | evg
+//Learn : Ethics Value Governance | evg
 Route::prefix('learn/ethics-value-goverance/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatEvg'])->name('evg.cat.add');
@@ -164,15 +165,17 @@ Route::prefix('learn/ethics-value-goverance/')->middleware('auth')->group(functi
     Route::post('store',[LearnController::class,'storeIndexEvg'])->name('evg.store');
 });
 
+//Bank Part 
 Route::prefix('bank/')->middleware('auth')->group(function(){
-    Route::post('store',[LearnController::class,'computerIct'])->name('bank.store');
+    Route::post('store',[BankController::class,'storeBankEnglish'])->name('bank.store');
 
-    Route::get('english',[LearnController::class,'bankEnglish'])->name('bank.english');
-    Route::get('math',[LearnController::class,'bankMath'])->name('bank.math');
-    Route::get('bangla',[LearnController::class,'bankBangla'])->name('bank.bangla');
-    Route::get('computer',[LearnController::class,'bankComputer'])->name('bank.computer');
+    Route::get('english/index',[BankController::class,'indexEnglish'])->name('bank.english');
+    Route::get('english/math',[BankController::class,'bankMath'])->name('bank.math');
+    Route::get('english/bangla',[BankController::class,'bankBangla'])->name('bank.bangla');
+    Route::get('english/computer',[BankController::class,'bankComputer'])->name('bank.computer');
 });
 
+//Vocabulary Part :
 Route::prefix('vocabulary/')->middleware('auth')->group(function(){
     Route::post('store',[VocabularyController::class,'vocabularyStore'])->name('vocabulary.store');
 
@@ -186,6 +189,7 @@ Route::prefix('vocabulary/')->middleware('auth')->group(function(){
     Route::DELETE('delete/{id}',[VocabularyController::class,'delete'])->name('vocabulary.destroy');
 });
 
+//Current Affairs :
 Route::prefix('current-affairs/')->middleware('auth')->group(function(){
     Route::post('store',[CurrentAffairController::class,'store'])->name('currentaffairs.store');
     Route::DELETE('delete/{id}',[CurrentAffairController::class,'delete'])->name('currentaffairs.destroy');

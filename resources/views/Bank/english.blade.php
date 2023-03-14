@@ -6,7 +6,7 @@
         <div class="row match-height">
             <div class="col-12">
                 <div class="card">
-                    {{-- <div class="card-header">
+                     <div class="card-header">
                         <h4 class="card-title">Add Bank : English - All PDF</h4>
                     </div>
 
@@ -45,7 +45,7 @@
                             </form>
                         </div>
                     </div> 
-                </div>--}}
+                </div>
             </div>
         </div>
     </section>
