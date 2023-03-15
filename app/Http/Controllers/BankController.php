@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Learn;
+use App\Models\Bank;
+use Illuminate\Support\Facades\Validator;
+use Session;
+use Illuminate\Support\Str;
 
 class BankController extends Controller
 {
     ///////////////////////////////////////////////////////
 
-    public function bankStore(Request $request){
+    public function storeBank(Request $request){
         //dd($request->all());
         $validator = Validator::make($request->all(), [
               'title' => 'required',
@@ -17,6 +20,7 @@ class BankController extends Controller
         ]);
 
         $slug=Str::slug($request->title, '-');
+        $snslug=Str::slug($request->subject_name, '-');
 
         if ($validator->fails()) {
           return redirect()->Back()->withInput()->withErrors($validator);
@@ -26,21 +30,21 @@ class BankController extends Controller
 
                     $file = $request->file('pdf_file_path');
                     //$filename = $file->hashName();
-                    $filename = $slug.'.'.$file->getClientOriginalExtension();;
+                    $filename = $snslug.'-'.$slug.'.'.$file->getClientOriginalExtension();;
                     // Upload file
-                    $file->move(public_path('file/pdf/computerIct/'),$filename);
+                    $file->move(public_path('file/pdf/bank/'),$filename);
                     // path
-                    $path="file/pdf/computerIct/$filename";
+                    $path="file/pdf/bank/$filename";
 
                     // Insert record
                     $insertData_arr = array(
                         'subject_name' => $request->subject_name,
-                        'topic_name' => $request->topic_name,
+                        //'topic_name' => $request->topic_name,
                         'title' => $request->title,
                         'pdf_file_path' => $path,
                     );
                     //dd($insertData_arr);
-                    Learn::create($insertData_arr);
+                    Bank::create($insertData_arr);
 
                     // Session
                     Session::flash('alert-class', 'alert-success');
@@ -60,25 +64,25 @@ class BankController extends Controller
 
     public function indexEnglish()
     {
-        $data = Learn::where('topic_name','=','Bangladesh')->get();
+        $data = Bank::where('subject_name','=','English')->get();
         return view('Bank.english',compact('data'));
     }
 
     public function indexBangla()
     {
-        $data = Learn::where('subject_name','=','Computer Ict')->get();
-        return view('CurrentAffairs.international',compact('data'));
+        $data = Bank::where('subject_name','=','Bangla')->get();
+        return view('Bank.bangla',compact('data'));
     }
 
     public function indexMath()
     {
-        $data = Learn::where('subject_name','=','Computer Ict')->get();
-        return view('CurrentAffairs.misc',compact('data'));
+        $data = Bank::where('subject_name','=','Math')->get();
+        return view('Bank.math',compact('data'));
     }
 
     public function indexComputer()
     {
-        $data = Learn::where('subject_name','=','Computer Ict')->get();
-        return view('CurrentAffairs.misc',compact('data'));
+        $data = Bank::where('subject_name','=','Computer Ict')->get();
+        return view('Bank.computer',compact('data'));
     }
 }

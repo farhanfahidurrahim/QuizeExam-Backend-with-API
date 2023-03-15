@@ -6,8 +6,8 @@
         <div class="row match-height">
             <div class="col-12">
                 <div class="card">
-                    {{-- <div class="card-header">
-                        <h4 class="card-title">Add Bank : English - All PDF</h4>
+                     <div class="card-header">
+                        <h4 class="card-title">Add Bank : Math - All PDF</h4>
                     </div>
 
                      <!-- Alert message (start) -->
@@ -22,8 +22,8 @@
                         <div class="card-body">
                             <form class="form" method="post" action="{{route("bank.store")}}" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="subject_name" value="English">
-                                <input type="hidden" name="topic_name" value="Noun">
+                                <input type="hidden" name="subject_name" value="Math">
+                                {{-- <input type="hidden" name="topic_name" value="Noun"> --}}
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
@@ -45,7 +45,7 @@
                             </form>
                         </div>
                     </div> 
-                </div>--}}
+                </div>
             </div>
         </div>
     </section>
@@ -77,7 +77,6 @@
                         <tr>
                             <th>Serial</th>
                             <th>Subject Name</th>
-                            <th>Topic Name</th>
                             <th>PDF Title</th>
                             <th>PDF Path</th>
                             <th>Action</th>
@@ -89,7 +88,6 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$result->subject_name}}</td>
-                                <td>{{$result->topic_name}}</td>
                                 <td>{{$result->title}}</td>
                                 <td>{{$result->pdf_file_path}}</td>
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>

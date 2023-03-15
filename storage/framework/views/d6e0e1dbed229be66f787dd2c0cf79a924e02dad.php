@@ -26,7 +26,7 @@
 
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" action="<?php echo e(route("learn.english.store")); ?>" enctype="multipart/form-data">
+                            <form class="form" method="post" action="<?php echo e(route("english.grammer.store")); ?>" enctype="multipart/form-data">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="subject_name" value="English Grammer">
                                 <div class="row">
@@ -95,7 +95,7 @@
                                 <td class="d-flex">
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
-                                        method="POST" action="<?php echo e(route('learn.destroy', $result->id)); ?>">
+                                        method="POST" action="<?php echo e(route('english.grammer.destroy', $result->id)); ?>">
                                         <?php echo csrf_field(); ?>
                                         <?php echo method_field('DELETE'); ?>
                                         <button class="btn btn-danger active">Delete</button>

@@ -69,7 +69,7 @@
                                 <td class="d-flex">
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
-                                        method="POST" action="<?php echo e(route('catenglit.destroy', $result->id)); ?>">
+                                        method="POST" action="<?php echo e(route('nineten.cat.destroy', $result->id)); ?>">
                                         <?php echo csrf_field(); ?>
                                         <?php echo method_field('DELETE'); ?>
                                         <button class="btn btn-danger active">Delete</button>

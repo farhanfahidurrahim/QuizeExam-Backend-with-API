@@ -56,6 +56,12 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
+                        <li class="sidebar-item  ">
+                            <a href="<?php echo e(route("users.index")); ?>" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
                         
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
@@ -256,17 +262,61 @@
                                 <span>Bank</span>
                             </a>
                             <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="<?php echo e(route('bank.english')); ?>">English</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        
+                                        <span>English</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('nineten.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('nineten.cat.add')); ?>">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="<?php echo e(route('bank.math')); ?>">Math</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        
+                                        <span>Bangla</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('eight.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('eight.cat.add')); ?>">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="<?php echo e(route('bank.bangla')); ?>">Bangla</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        
+                                        <span>Math</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('seven.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('seven.cat.add')); ?>">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="<?php echo e(route('bank.computer')); ?>">Computer</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        
+                                        <span>Computer</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('seven.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('seven.cat.add')); ?>">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -345,19 +395,31 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item sidebar-item  has-sub">
-                                    <a href="#" class='sidebar-link'>
+                                    <a href="" class='sidebar-link'>
                                         
-                                        <span>English</span>
+                                        <span>English Grammer</span>
                                     </a>
                                     <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('english.grammer.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('english.grammer.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         
-                                        <span>Literature</span>
+                                        <span>English Literature</span>
                                     </a>
                                     <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('english.literature.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('english.literature.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -365,7 +427,12 @@
                                         <span>বাংলা ব্যাকরণ</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bangla.grammer.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bangla.grammer.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -373,31 +440,39 @@
                                         <span>বাংলা সাহিত্য</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bangla.literature.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bangla.lit.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
-                                        <span>পাটিগণিত</span>
+                                        <span>গণিত</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('math.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('math.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="submenu-item sidebar-item  has-sub">
-                                    <a href="#" class='sidebar-link'>
-                                        <span>বীজগণিত</span>
-                                    </a>
-                                    <ul class="submenu ">
-                                        
-                                    </ul>
-                                </li>
+                                
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         <span>আন্তর্জাতিক বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('intaff.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('intaff.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -405,7 +480,12 @@
                                         <span>বাংলাদেশ বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bdaff.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('bdaff.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -413,7 +493,12 @@
                                         <span>ভূগোল ও পরিবেশ</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('geoenv.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('geoenv.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -421,7 +506,12 @@
                                         <span>কম্পিউটার ও তথ্য প্রযুক্তি</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('compict.index')); ?>">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="<?php echo e(route('compict.cat.add')); ?>">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -430,16 +520,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">ভাষাগত যৌক্তিক বিচার</a>
+                                            <a href="<?php echo e(route('mentalskill.index')); ?>">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">সমস্যা সমাধান </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">বানান ও ভাষা </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">যান্ত্রিক দক্ষতা</a>
+                                            <a href="<?php echo e(route('mentalskill.cat.add')); ?>">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -449,13 +533,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">সুশাসন</a>
+                                            <a href="<?php echo e(route('evg.index')); ?>">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">মূল্যবোধ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">নৈতিকতা</a>
+                                            <a href="<?php echo e(route('evg.cat.add')); ?>">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>

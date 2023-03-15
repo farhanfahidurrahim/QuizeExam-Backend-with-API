@@ -22,8 +22,8 @@
                         <div class="card-body">
                             <form class="form" method="post" action="{{route("bank.store")}}" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="subject_name" value="English">
-                                <input type="hidden" name="topic_name" value="Noun">
+                                <input type="hidden" name="subject_name" value="Bangla">
+                                {{-- <input type="hidden" name="topic_name" value="Noun"> --}}
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
@@ -77,7 +77,6 @@
                         <tr>
                             <th>Serial</th>
                             <th>Subject Name</th>
-                            <th>Topic Name</th>
                             <th>PDF Title</th>
                             <th>PDF Path</th>
                             <th>Action</th>
@@ -89,7 +88,6 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$result->subject_name}}</td>
-                                <td>{{$result->topic_name}}</td>
                                 <td>{{$result->title}}</td>
                                 <td>{{$result->pdf_file_path}}</td>
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>

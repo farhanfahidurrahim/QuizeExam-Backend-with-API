@@ -88,7 +88,7 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
-    public function delete($id)
+    public function deleteEngGram($id)
     {
         $data = LearnEnglishGrammer::findOrFail($id);
         @unlink($data->pdf_file_path);
@@ -155,6 +155,15 @@ class LearnController extends Controller
         return redirect()->back();
     }
 
+    public function deleteEngLiter($id)
+    {
+        $data = LearnEnglishLiterature::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     ///////////////////////Bangla Grammer////////////////////////////////
 
     public function storeIndexBnGram(Request $request){
@@ -211,6 +220,15 @@ class LearnController extends Controller
         $data = LearnBanglaGrammer::where('subject_name','=','Language Grammer')->get();
         $category=CategoryBanglaGrammer::all();
         return view('Learn.BanglaGrammer.index',compact('data','category'));
+    }
+
+    public function deleteBnGram($id)
+    {
+        $data = LearnBanglaGrammer::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
     }
 
     ///////////////////////Bangla Literature////////////////////////////////
@@ -271,6 +289,15 @@ class LearnController extends Controller
         return view('Learn.BanglaLiterature.index',compact('data','category'));
     }
 
+    public function deleteBnLiter($id)
+    {
+        $data = LearnBanglaLiterature::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     /////////////////////// Math ////////////////////////////////
 
     public function storeIndexMath(Request $request){
@@ -281,6 +308,7 @@ class LearnController extends Controller
         ]);
 
         $slug=Str::slug($request->title, '-');
+        //$tnslug=Str::slug($request->topic_name, '-');
 
         if ($validator->fails()) {
           return redirect()->Back()->withInput()->withErrors($validator);
@@ -327,6 +355,15 @@ class LearnController extends Controller
         $data = LearnMath::get();
         $category=CategoryMath::all();
         return view('Learn.Math.index',compact('data','category'));
+    }
+
+    public function deleteMath($id)
+    {
+        $data = LearnMath::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
     }
 
     ////////////////////////International Affairs///////////////////////////////
@@ -387,6 +424,14 @@ class LearnController extends Controller
         return view('Learn.InternationalAffairs.index',compact('data','category'));
     }
 
+    public function deleteIntAff($id)
+    {
+        $data = LearnInternationalAffair::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
 
     ////////////////////////Bangladesh Affairs///////////////////////////////
 
@@ -444,6 +489,15 @@ class LearnController extends Controller
         $data = LearnBangladeshAffair::all();
         $category=CategoryBangladeshAffair::all();
         return view('Learn.BangladeshAffairs.index',compact('data','category'));
+    }
+
+    public function deleteBdAff($id)
+    {
+        $data = LearnBangladeshAffair::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
     }
 
     ////////////////////////Geography Environment///////////////////////////////
@@ -504,6 +558,15 @@ class LearnController extends Controller
         return view('Learn.GeographyEnvironment.index',compact('data','category'));
     }
 
+    public function deleteGeoEnv($id)
+    {
+        $data = LearnGeographyEnvironment::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     ////////////////////////Computer Ict///////////////////////////////
 
     public function storeIndexCompIct(Request $request){
@@ -560,6 +623,15 @@ class LearnController extends Controller
         $data = LearnComputerIct::all();
         $category=CategoryComputerIct::all();
         return view('Learn.ComputerIct.index',compact('data','category'));
+    }
+
+    public function deleteCompIct($id)
+    {
+        $data = LearnComputerIct::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
     }
 
     ////////////////////////Mental Skill///////////////////////////////
@@ -620,6 +692,15 @@ class LearnController extends Controller
         return view('Learn.MentalSkill.index',compact('data','category'));
     }
 
+    public function deleteMentSkill($id)
+    {
+        $data = LearnMentalSkill::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     ////////////////////// EthicsValueGoverance : EVG /////////////////////////
 
     public function storeIndexEvg(Request $request){
@@ -676,5 +757,14 @@ class LearnController extends Controller
         $data = LearnEthicsValueGoverance::all();
         $category=CategoryEthicsValueGoverance::all();
         return view('Learn.EthicsValueGoverance.index',compact('data','category'));
+    }
+
+    public function deleteEvg($id)
+    {
+        $data = LearnEthicsValueGoverance::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
     }
 }

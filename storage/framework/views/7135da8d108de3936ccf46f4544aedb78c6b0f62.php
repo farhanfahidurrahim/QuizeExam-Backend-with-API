@@ -24,7 +24,7 @@
                             <form class="form" method="post" action="<?php echo e(route("bank.store")); ?>" enctype="multipart/form-data">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="subject_name" value="English">
-                                <input type="hidden" name="topic_name" value="Noun">
+                                
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
@@ -69,16 +69,13 @@
         </div>
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                    Users
-                </div>
+                
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
                         <thead>
                         <tr>
                             <th>Serial</th>
                             <th>Subject Name</th>
-                            <th>Topic Name</th>
                             <th>PDF Title</th>
                             <th>PDF Path</th>
                             <th>Action</th>
@@ -90,7 +87,6 @@
                             <tr>
                                 <td><?php echo e($loop->iteration); ?></td>
                                 <td><?php echo e($result->subject_name); ?></td>
-                                <td><?php echo e($result->topic_name); ?></td>
                                 <td><?php echo e($result->title); ?></td>
                                 <td><?php echo e($result->pdf_file_path); ?></td>
                                 

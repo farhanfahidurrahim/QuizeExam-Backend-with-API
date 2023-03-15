@@ -40,6 +40,15 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
+    public function deleteCatEngGram($id)
+    {
+        $data = CategoryEnglishGrammer::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     ///////////////////// Learn -> English Literature//////////////////////
 
     public function addCatEngLiter()
@@ -85,7 +94,7 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function deleteBnGram($id)
+    public function deleteCatBnGram($id)
     {
         $data = CategoryBanglaGrammer::findOrFail($id);
         @unlink($data->pdf_file_path);
@@ -210,7 +219,7 @@ class CategoryController extends Controller
         return view('Learn.GeographyEnvironment.add_category',compact('data'));
     }
 
-    public function storeGeoEnv(Request $request)
+    public function storeCatGeoEnv(Request $request)
     {
         $insertData_arr = array(
             'category_name' => $request->category_name,
@@ -237,7 +246,7 @@ class CategoryController extends Controller
         return view('Learn.ComputerIct.add_category',compact('data'));
     }
 
-    public function storeCompIct(Request $request)
+    public function storeCatCompIct(Request $request)
     {
         $insertData_arr = array(
             'category_name' => $request->category_name,

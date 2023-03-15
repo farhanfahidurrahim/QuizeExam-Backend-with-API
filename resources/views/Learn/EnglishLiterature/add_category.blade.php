@@ -71,7 +71,7 @@
                                 <td class="d-flex">
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
-                                        method="POST" action="{{ route('catenglit.destroy', $result->id) }}">
+                                        method="POST" action="{{ route('englit.cat.destroy', $result->id) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger active">Delete</button>

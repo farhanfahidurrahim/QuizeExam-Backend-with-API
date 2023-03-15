@@ -25,7 +25,7 @@
 
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" action="{{route("learn.english.store")}}" enctype="multipart/form-data">
+                            <form class="form" method="post" action="{{route("english.grammer.store")}}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="subject_name" value="English Grammer">
                                 <div class="row">
@@ -97,7 +97,7 @@
                                 <td class="d-flex">
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
-                                        method="POST" action="{{ route('learn.destroy', $result->id) }}">
+                                        method="POST" action="{{ route('english.grammer.destroy', $result->id) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger active">Delete</button>

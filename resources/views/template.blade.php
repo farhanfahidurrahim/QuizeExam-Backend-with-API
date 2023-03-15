@@ -56,13 +56,13 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        {{-- <li class="sidebar-item  ">
+                        <li class="sidebar-item  ">
                             <a href="{{route("users.index")}}" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span>Users</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  has-sub">
+                        {{-- <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
                                 <span>Video Course</span>
@@ -290,17 +290,61 @@
                                 <span>Bank</span>
                             </a>
                             <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{ route('bank.english') }}">English</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        {{-- <i class="bi bi-hexagon-fill"></i> --}}
+                                        <span>English</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('nineten.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('nineten.cat.add') }}">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="{{ route('bank.math') }}">Math</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        {{-- <i class="bi bi-hexagon-fill"></i> --}}
+                                        <span>Bangla</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('eight.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('eight.cat.add') }}">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="{{ route('bank.bangla') }}">Bangla</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        {{-- <i class="bi bi-hexagon-fill"></i> --}}
+                                        <span>Math</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('seven.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('seven.cat.add') }}">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="{{ route('bank.computer') }}">Computer</a>
+                                <li class="submenu-item sidebar-item  has-sub">
+                                    <a href="#" class='sidebar-link'>
+                                        {{-- <i class="bi bi-hexagon-fill"></i> --}}
+                                        <span>Computer</span>
+                                    </a>
+                                    <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('seven.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('seven.cat.add') }}">Add Category</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -379,19 +423,31 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item sidebar-item  has-sub">
-                                    <a href="#" class='sidebar-link'>
+                                    <a href="" class='sidebar-link'>
                                         {{-- <i class="bi bi-hexagon-fill"></i> --}}
-                                        <span>English</span>
+                                        <span>English Grammer</span>
                                     </a>
                                     <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('english.grammer.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('english.grammer.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         {{-- <i class="bi bi-hexagon-fill"></i> --}}
-                                        <span>Literature</span>
+                                        <span>English Literature</span>
                                     </a>
                                     <ul class="submenu ">
+                                        <li class="submenu-item">
+                                            <a href="{{ route('english.literature.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('english.literature.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -399,7 +455,12 @@
                                         <span>বাংলা ব্যাকরণ</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bangla.grammer.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bangla.grammer.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -407,31 +468,54 @@
                                         <span>বাংলা সাহিত্য</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bangla.literature.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bangla.lit.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
-                                        <span>পাটিগণিত</span>
+                                        <span>গণিত</span>
                                     </a>
                                     <ul class="submenu ">
-
+                                        <li class="submenu-item">
+                                            <a href="{{ route('math.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('math.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="submenu-item sidebar-item  has-sub">
+                                {{-- <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         <span>বীজগণিত</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="{{ route('math.algebra1') }}">বীজগাণিতিক রাশি</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('math.algebra2') }}">বীজগানিতিক সূত্রাবলী</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('math.algebra3') }}">উৎপাদকে বিশ্লেষণ</a>
+                                        </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="submenu-item sidebar-item  has-sub">
                                     <a href="#" class='sidebar-link'>
                                         <span>আন্তর্জাতিক বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="{{ route('intaff.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('intaff.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -439,7 +523,12 @@
                                         <span>বাংলাদেশ বিষয়াবলী</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bdaff.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('bdaff.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -447,7 +536,12 @@
                                         <span>ভূগোল ও পরিবেশ</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="{{ route('geoenv.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('geoenv.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -455,7 +549,12 @@
                                         <span>কম্পিউটার ও তথ্য প্রযুক্তি</span>
                                     </a>
                                     <ul class="submenu ">
-                                        
+                                        <li class="submenu-item">
+                                            <a href="{{ route('compict.index') }}">index</a>
+                                        </li>
+                                        <li class="submenu-item">
+                                            <a href="{{ route('compict.cat.add') }}">Add Category</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="submenu-item sidebar-item  has-sub">
@@ -464,16 +563,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">ভাষাগত যৌক্তিক বিচার</a>
+                                            <a href="{{ route('mentalskill.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">সমস্যা সমাধান </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">বানান ও ভাষা </a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">যান্ত্রিক দক্ষতা</a>
+                                            <a href="{{ route('mentalskill.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -483,13 +576,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="">সুশাসন</a>
+                                            <a href="{{ route('evg.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="">মূল্যবোধ</a>
-                                        </li>
-                                        <li class="submenu-item">
-                                            <a href="">নৈতিকতা</a>
+                                            <a href="{{ route('evg.cat.add') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>

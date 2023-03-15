@@ -41,117 +41,127 @@ Route::get("/courses/store/",function (){
 })->name("courses.store")->middleware("auth");
 //Route::post("/courses/store",[\App\Http\Controllers\CoursesController::class,"store"])->name("courses.store")->middleware("auth");
 
-//Learn Controller
-Route::DELETE('delete/{id}',[LearnController::class,'delete'])->name('learn.destroy')->middleware('auth');
 
-//English Grammer 
+//Learn->English Grammer 
 Route::prefix('learn/english-grammer/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatEngGram'])->name('english.grammer.add');
     Route::post('store-category',[CategoryController::class,'storeCatEngGram'])->name('english.category.store');
-    Route::DELETE('xyz/{id}',[CategoryController::class,'deleteEngGram'])->name('learn.noun.destroy');
-
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatEngGram'])->name('enggram.cat.destroy');
+    
     Route::get('index',[LearnController::class,'indexEnglishGrammer'])->name('english.grammer.index');
-    Route::post('store',[LearnController::class,'storeIndexEnglishGrammer'])->name('learn.english.store');
+    Route::post('store',[LearnController::class,'storeIndexEnglishGrammer'])->name('english.grammer.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteEngGram'])->name('english.grammer.destroy');
 });
 
-//English Literature 
+Route::get('index',[LearnController::class,'indexBlaa'])->name('learn.noun.destroy');
+
+//Learn->English Literature 
 Route::prefix('learn/english-literature/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatEngLiter'])->name('english.literature.add');
     Route::post('store-category',[CategoryController::class,'storeCatEngLiter'])->name('english.lit.category.store');
-    Route::DELETE('delete/{id}',[CategoryController::class,'deleteEngLit'])->name('catenglit.destroy');
-
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteEngLit'])->name('englit.cat.destroy');
+    
     Route::get('index',[LearnController::class,'indexEnglishLiterature'])->name('english.literature.index');
     Route::post('store',[LearnController::class,'storeIndexEnglishLiterature'])->name('english.literature.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteEngLiter'])->name('eng.liter.destroy');
 });
 
-//Bangla Grammer
+//Learn->Bangla Grammer
 Route::prefix('learn/bangla-grammer/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatBnGram'])->name('bangla.grammer.add');
     Route::post('store-category',[CategoryController::class,'storeCatBnGram'])->name('bangla.gram.category.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteEngLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatBnGram'])->name('banglagram.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexBnGram'])->name('bangla.grammer.index');
     Route::post('store',[LearnController::class,'storeIndexBnGram'])->name('bangla.grammer.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteBnGram'])->name('bangla.grammer.destroy');
 });
 
-//Bangla Literature
+//Learn->Bangla Literature
 Route::prefix('learn/bangla-literature/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatBnLit'])->name('bangla.lit.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatBnLit'])->name('bangla.lit.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatBnLit'])->name('banglalit.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexBnLit'])->name('bangla.literature.index');
     Route::post('store',[LearnController::class,'storeIndexBnLit'])->name('bangla.literature.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteBnLiter'])->name('bangla.literature.destroy');
 });
 
-//Math
+//Learn->Math
 Route::prefix('learn/math/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatMath'])->name('math.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatMath'])->name('math.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatMath'])->name('math.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexMath'])->name('math.index');
     Route::post('store',[LearnController::class,'storeIndexMath'])->name('math.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteMath'])->name('math.destroy');
 });
 
-//International Affairs
+//Learn->International Affairs
 Route::prefix('learn/international-affairs/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatIntAff'])->name('intaff.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatIntAff'])->name('intaff.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatIntAff'])->name('intaff.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexIntAff'])->name('intaff.index');
     Route::post('store',[LearnController::class,'storeIndexIntAff'])->name('intaff.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteIntAff'])->name('intaff.destroy');
 });
 
-//Bangladesh Affairs
+//Learn->Bangladesh Affairs
 Route::prefix('learn/bangladesh-affairs/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatBdAff'])->name('bdaff.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatBdAff'])->name('bdaff.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatBdAff'])->name('bdaff.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexBdAff'])->name('bdaff.index');
     Route::post('store',[LearnController::class,'storeIndexBdAff'])->name('bdaff.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteBdAff'])->name('bdaff.destroy');
 });
 
-//Geography Environment
+//Learn->Geography Environment
 Route::prefix('learn/geography-environment/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatGeoEnv'])->name('geoenv.cat.add');
-    Route::post('store-category',[CategoryController::class,'storeGeoEnv'])->name('geoenv.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::post('store-category',[CategoryController::class,'storeCatGeoEnv'])->name('geoenv.cat.store');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatGeoEnv'])->name('geoenv.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexGeoEnv'])->name('geoenv.index');
     Route::post('store',[LearnController::class,'storeIndexGeoEnv'])->name('geoenv.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteGeoEnv'])->name('geoenv.destroy');
 });
 
-//Computer Ict
+//Learn->Computer Ict
 Route::prefix('learn/computer-ict/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatCompIct'])->name('compict.cat.add');
-    Route::post('store-category',[CategoryController::class,'storeCompIct'])->name('compict.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::post('store-category',[CategoryController::class,'storeCatCompIct'])->name('compict.cat.store');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatCompIct'])->name('compict.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexCompIct'])->name('compict.index');
     Route::post('store',[LearnController::class,'storeIndexCompIct'])->name('compict.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteCompIct'])->name('compict.destroy');
 });
 
-//Mental Skill
+//Learn->Mental Skill
 Route::prefix('learn/mental-skill/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatMentSkill'])->name('mentalskill.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatMentSkill'])->name('mentalskill.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatMentSkill'])->name('mentalskill.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexMentSkill'])->name('mentalskill.index');
     Route::post('store',[LearnController::class,'storeIndexMentSkill'])->name('mentalskill.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteMentSkill'])->name('mentalskill.destroy');
 });
 
 //Learn : Ethics Value Governance | evg
@@ -159,17 +169,19 @@ Route::prefix('learn/ethics-value-goverance/')->middleware('auth')->group(functi
 
     Route::get('add-category',[CategoryController::class,'addCatEvg'])->name('evg.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatEvg'])->name('evg.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatEvg'])->name('evg.cat.destroy');
 
     Route::get('index',[LearnController::class,'indexEvg'])->name('evg.index');
     Route::post('store',[LearnController::class,'storeIndexEvg'])->name('evg.store');
+    Route::DELETE('delete/{id}',[LearnController::class,'deleteEvg'])->name('evg.destroy');
 });
 
 //Bank Part 
 Route::prefix('bank/')->middleware('auth')->group(function(){
-    Route::post('store',[BankController::class,'storeBankEnglish'])->name('bank.store');
+    Route::post('store',[BankController::class,'storeBank'])->name('bank.store');
 
     Route::get('english/index',[BankController::class,'indexEnglish'])->name('bank.english');
+    //Route::get('english/delete',[BankController::class,'indexEnglish'])->name('bank.english');
     Route::get('bangla/index',[BankController::class,'indexBangla'])->name('bank.bangla');
     Route::get('math/index',[BankController::class,'indexMath'])->name('bank.math');
     Route::get('computer/index',[BankController::class,'indexComputer'])->name('bank.computer');
@@ -204,10 +216,11 @@ Route::prefix('e-book/class-nine-ten/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatNineTen'])->name('nineten.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatNineTen'])->name('nineten.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatNineTen'])->name('nineten.cat.destroy');
 
     Route::get('index',[EbookController::class,'indexNineTen'])->name('nineten.index');
     Route::post('store',[EbookController::class,'storeIndexNineTen'])->name('nineten.store');
+    Route::DELETE('delete-category/{id}',[EbookController::class,'deleteCatNineTenIndexNineTen'])->name('nineten.destroy');
 });
 
 //E book | Eight
@@ -215,7 +228,7 @@ Route::prefix('e-book/class-eight/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatEight'])->name('eight.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatEight'])->name('eight.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatEight'])->name('eight.cat.destroy');
 
     Route::get('index',[EbookController::class,'indexEight'])->name('eight.index');
     Route::post('store',[EbookController::class,'storeIndexEight'])->name('eight.store');
@@ -226,7 +239,7 @@ Route::prefix('e-book/class-seven/')->middleware('auth')->group(function(){
 
     Route::get('add-category',[CategoryController::class,'addCatSeven'])->name('seven.cat.add');
     Route::post('store-category',[CategoryController::class,'storeCatSeven'])->name('seven.cat.store');
-    //Route::DELETE('delete/{id}',[CategoryController::class,'deleteCatBnLit'])->name('catenglit.destroy');
+    Route::DELETE('delete-category/{id}',[CategoryController::class,'deleteCatSeven'])->name('seven.cat.destroy');
 
     Route::get('index',[EbookController::class,'indexSeven'])->name('seven.index');
     Route::post('store',[EbookController::class,'storeIndexSeven'])->name('seven.store');
