@@ -93,6 +93,7 @@
                                 <td><?php echo e($result->pdf_file_path); ?></td>
                                 
                                 <td class="d-flex">
+                                    <a href="<?php echo e(asset($result->pdf_file_path)); ?>" target="_blank" class="btn btn-primary">View</a>
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
                                         method="POST" action="<?php echo e(route('english.grammer.destroy', $result->id)); ?>">

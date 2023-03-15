@@ -297,10 +297,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('nineten.index') }}">index</a>
+                                            <a href="{{ route('bank.english.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('nineten.cat.add') }}">Add Category</a>
+                                            <a href="{{ route('bank.english.addcat') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -311,10 +311,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="{{ route('eight.index') }}">index</a>
+                                            <a href="{{ route('bank.bangla.index') }}">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="{{ route('eight.cat.add') }}">Add Category</a>
+                                            <a href="{{ route('bank.bangla.addcat') }}">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>

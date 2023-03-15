@@ -24,6 +24,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
+use App\Models\LearnEnglishGrammer;
 
 class ApiControler extends Controller
 {
@@ -143,6 +144,14 @@ function Login(Request $request){
 
      }
 
+}
+
+function Learn_English_grammer(){
+     $data=LearnEnglishGrammer::all();
+     return Response::json([
+         "error"=>false,
+         "data"=>$data
+         ]);
 }
 
 function HSC_Video(){

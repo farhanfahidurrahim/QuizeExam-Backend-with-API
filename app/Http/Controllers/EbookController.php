@@ -72,7 +72,7 @@ class EbookController extends Controller
         return view('Ebook.NineTen.index',compact('data','category'));
     }
 
-    public function delete($id)
+    public function deleteIndexNineTen($id)
     {
         $data = EbookNineten::findOrFail($id);
         @unlink($data->pdf_file_path);
@@ -140,7 +140,7 @@ class EbookController extends Controller
         return view('Ebook.Eight.index',compact('data','category'));
     }
 
-    public function deleteEight($id)
+    public function deleteIndexEight($id)
     {
         $data = EbookEight::findOrFail($id);
         @unlink($data->pdf_file_path);
@@ -208,7 +208,7 @@ class EbookController extends Controller
         return view('Ebook.Seven.index',compact('data','category'));
     }
 
-    public function deleteSeven($id)
+    public function deleteIndexSeven($id)
     {
         $data = EbookSeven::findOrFail($id);
         @unlink($data->pdf_file_path);

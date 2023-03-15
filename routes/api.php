@@ -22,6 +22,10 @@ Route::post("/register",[ApiControler::class,"Register"]);
 Route::post("/login",[ApiControler::class,"Login"]);
 Route::get("/Profile",[ApiControler::class,"Profile"])->middleware("auth:sanctum");
 Route::put("/Profile",[ApiControler::class,"UpdateProfile"])->middleware("auth:sanctum");
+
+Route::post("/learn_english_grammer",[ApiControler::class,"Learn_English_grammer"]);
+//Route::post("/login",[ApiControler::class,"Login"]);
+
 //HSC
 Route::get("/HSC_Video",[ApiControler::class,"HSC_Video"]);
 Route::get("/HSC_Video_Subject",[ApiControler::class,"HSC_Video_Subject"]);

@@ -269,10 +269,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="<?php echo e(route('nineten.index')); ?>">index</a>
+                                            <a href="<?php echo e(route('bank.english.index')); ?>">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="<?php echo e(route('nineten.cat.add')); ?>">Add Category</a>
+                                            <a href="<?php echo e(route('bank.english.addcat')); ?>">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -283,10 +283,10 @@
                                     </a>
                                     <ul class="submenu ">
                                         <li class="submenu-item">
-                                            <a href="<?php echo e(route('eight.index')); ?>">index</a>
+                                            <a href="<?php echo e(route('bank.bangla.index')); ?>">index</a>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="<?php echo e(route('eight.cat.add')); ?>">Add Category</a>
+                                            <a href="<?php echo e(route('bank.bangla.addcat')); ?>">Add Category</a>
                                         </li>
                                     </ul>
                                 </li>

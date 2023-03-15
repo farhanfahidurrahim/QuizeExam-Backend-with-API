@@ -95,6 +95,7 @@
                                 {{-- <td><a class="badge bg-danger" href="{{route("learn.noun.destroy",[$result->id])}}">Delete</a>
                                 </td> --}}
                                 <td class="d-flex">
+                                    <a href="{{ asset($result->pdf_file_path) }}" target="_blank" class="btn btn-primary">View</a>
                                     <form class="px-3"
                                         onclick="return confirm('Are you sure you want to delete this contact?')"
                                         method="POST" action="{{ route('english.grammer.destroy', $result->id) }}">

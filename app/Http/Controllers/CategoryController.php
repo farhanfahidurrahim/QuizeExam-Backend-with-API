@@ -19,6 +19,8 @@ use App\Models\CategoryEthicsValueGoverance;
 use App\Models\CategoryEbookNineten;
 use App\Models\CategoryEbookEight;
 use App\Models\CategoryEbookSeven;
+//Bank Part : Model [Category/Topic]
+use App\Models\CategoryBankEnglish;
 
 class CategoryController extends Controller
 {   
@@ -396,6 +398,33 @@ class CategoryController extends Controller
     public function deleteCatSeven($id)
     {
         $data = CategoryEbookSeven::findOrFail($id);
+        @unlink($data->pdf_file_path);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
+    //////////////////// Bank -> English ///////////////////////
+
+    public function addCatBankEng()
+    {   
+        $data = CategoryBankEnglish::all();
+        return view('Bank.English.add_category',compact('data'));
+    }
+
+    public function storeCatBankEng(Request $request)
+    {
+        $insertData_arr = array(
+            'category_name' => $request->category_name,
+        );
+
+        CategoryBankEnglish::create($insertData_arr);
+        return redirect()->back();
+    }
+
+    public function deleteCatBankEng($id)
+    {
+        $data = CategoryBankEnglish::findOrFail($id);
         @unlink($data->pdf_file_path);
         $data->delete();
 
